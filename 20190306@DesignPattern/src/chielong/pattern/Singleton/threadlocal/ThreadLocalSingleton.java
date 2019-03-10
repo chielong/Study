@@ -14,10 +14,15 @@ package chielong.pattern.Singleton.threadlocal;
 public class ThreadLocalSingleton {
     private static final ThreadLocal<ThreadLocalSingleton> threadLocalInstance =
             new ThreadLocal<ThreadLocalSingleton>() {
-                protected ThreadLocalSingleton initValue() {
+                @Override
+                protected ThreadLocalSingleton initialValue() {
                     return new ThreadLocalSingleton();
                 }
             };
+
+    private ThreadLocalSingleton() {
+
+    }
 
     public static ThreadLocalSingleton get() {
         return  threadLocalInstance.get();

@@ -21,6 +21,6 @@ public enum  EnumSingleton {
     }
 
     public static EnumSingleton get() {
-        return null;
+        return INSTANCE;
     }
 }

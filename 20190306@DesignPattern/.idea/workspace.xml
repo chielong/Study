@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7998418c-1359-49bc-aa21-06279e0c68c7" name="Default Changelist" comment="" />
+    <list default="true" id="7998418c-1359-49bc-aa21-06279e0c68c7" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/chielong/pattern/Singleton/seriable/SeriableSingleton.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/chielong/pattern/Singleton/container/ContainerSingleton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/chielong/pattern/Singleton/register/ContainerSingleton.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/chielong/pattern/Singleton/hungry/HungrySingleton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/chielong/pattern/Singleton/hungry/HungrySingleton.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/chielong/pattern/Singleton/register/EnumSingleton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/chielong/pattern/Singleton/register/EnumSingleton.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/chielong/pattern/Singleton/threadlocal/ThreadLocalSingleton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/chielong/pattern/Singleton/threadlocal/ThreadLocalSingleton.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/chielong/pattern/Singleton/总结单例模式.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/chielong/pattern/Singleton/总结单例模式.txt" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -11,11 +20,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/chielong/pattern/Singleton/总结单例模式.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" column="10" lean-forward="true" selection-start-line="1" selection-start-column="10" selection-end-line="1" selection-end-column="10" />
+            <state relative-caret-position="102">
+              <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/chielong/pattern/Singleton/lazy/LazyInnerClassSingleton.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="476">
+              <caret line="32" column="18" selection-start-line="32" selection-start-column="12" selection-end-line="32" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -34,10 +52,14 @@
     <findStrings>
       <find>contains(</find>
       <find>public boolean c</find>
+      <find>initialValue(</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/src/chielong/pattern/FactoryPattern/chielong/pattern</dir>
     </dirStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -77,11 +99,13 @@
         <option value="$PROJECT_DIR$/src/chielong/pattern/FactoryPattern/AbstractFactory/WizardWeapon.java" />
         <option value="$PROJECT_DIR$/src/chielong/pattern/FactoryPattern/AbstractFactory/WizardGown.java" />
         <option value="$PROJECT_DIR$/src/chielong/pattern/Singleton/lazy/LazySimpleSingleton.java" />
-        <option value="$PROJECT_DIR$/src/chielong/pattern/Singleton/hungry/HungrySingleton.java" />
         <option value="$PROJECT_DIR$/src/chielong/pattern/Singleton/lazy/LazySingleton.java" />
         <option value="$PROJECT_DIR$/src/chielong/pattern/Singleton/lazy/LazyInnerClassSingleton.java" />
-        <option value="$PROJECT_DIR$/src/chielong/pattern/Singleton/register/EnumSingleton.java" />
         <option value="$PROJECT_DIR$/src/chielong/pattern/Singleton/container/ContainerSingleton.java" />
+        <option value="$PROJECT_DIR$/src/chielong/pattern/Singleton/hungry/HungrySingleton.java" />
+        <option value="$PROJECT_DIR$/src/chielong/pattern/Singleton/register/EnumSingleton.java" />
+        <option value="$PROJECT_DIR$/src/chielong/pattern/Singleton/register/ContainerSingleton.java" />
+        <option value="$PROJECT_DIR$/src/chielong/pattern/Singleton/seriable/SeriableSingleton.java" />
         <option value="$PROJECT_DIR$/src/chielong/pattern/Singleton/threadlocal/ThreadLocalSingleton.java" />
         <option value="$PROJECT_DIR$/src/chielong/pattern/Singleton/总结单例模式.txt" />
       </list>
@@ -102,12 +126,14 @@
     <option name="width" value="1440" />
     <option name="height" value="788" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
       <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -131,7 +157,7 @@
               <item name="20190306@DesignPattern" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="pattern" type="462c0819:PsiDirectoryNode" />
-              <item name="FactoryPattern" type="462c0819:PsiDirectoryNode" />
+              <item name="Singleton" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="20190306@DesignPattern" type="b2602c69:ProjectViewProjectNode" />
@@ -139,18 +165,18 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="pattern" type="462c0819:PsiDirectoryNode" />
               <item name="Singleton" type="462c0819:PsiDirectoryNode" />
+              <item name="lazy" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1552140999779" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1552204094451" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="GenericSQL" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="MavenSettings" />
@@ -210,17 +236,18 @@
       <workItem from="1552061288846" duration="28000" />
       <workItem from="1552133835760" duration="5235000" />
       <workItem from="1552140850381" duration="254000" />
+      <workItem from="1552202512399" duration="1782000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16042000" />
+    <option name="totallyTimeSpent" value="17824000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="788" extended-state="1" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18955651" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19170243" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -450,53 +477,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/chielong/pattern/Singleton/hungry/HungrySingleton.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="46" selection-start-line="3" selection-start-column="46" selection-end-line="3" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/chielong/pattern/Singleton/lazy/LazyDlcSingleton.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-61">
-          <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/chielong/pattern/Singleton/lazy/LazyInnerClassSingleton.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="20" selection-start-line="12" selection-start-column="20" selection-end-line="12" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/chielong/pattern/Singleton/register/EnumSingleton.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="12" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="12" />
-          <folding>
-            <element signature="e#157#158#0" expanded="true" />
-            <element signature="e#184#185#0" expanded="true" />
-            <element signature="e#224#225#0" expanded="true" />
-            <element signature="e#256#257#0" expanded="true" />
-            <element signature="e#297#298#0" expanded="true" />
-            <element signature="e#324#325#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/chielong/pattern/Singleton/container/ContainerSingleton.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="6" column="59" selection-start-line="6" selection-start-column="59" selection-end-line="6" selection-end-column="59" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#193#209#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-11.0.2.jdk/Contents/Home/lib/src.zip!/java.base/java/util/HashMap.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="205">
@@ -508,19 +488,99 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/20190306@DesignPattern.iml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/chielong/pattern/Singleton/lazy/LazyDlcSingleton.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="43">
+          <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/chielong/pattern/Singleton/register/EnumSingleton.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="23" column="23" selection-start-line="23" selection-start-column="23" selection-end-line="23" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/chielong/pattern/Singleton/register/ContainerSingleton.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-97">
+          <caret line="11" column="25" selection-start-line="11" selection-start-column="25" selection-end-line="11" selection-end-column="25" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/chielong/pattern/Singleton/seriable/SeriableSingleton.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="79">
+          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+          <folding>
+            <element signature="e#332#333#0" expanded="true" />
+            <element signature="e#362#363#0" expanded="true" />
+            <element signature="e#403#404#0" expanded="true" />
+            <element signature="e#433#434#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-11.0.2.jdk/Contents/Home/lib/src.zip!/java.base/java/lang/ThreadLocal.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="73">
+          <caret line="303" column="33" selection-start-line="303" selection-start-column="20" selection-end-line="303" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/chielong/pattern/Singleton/hungry/HungrySingleton.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="16" selection-start-line="4" selection-start-column="16" selection-end-line="4" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/chielong/pattern/Singleton/threadlocal/ThreadLocalSingleton.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="3" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
+        <state relative-caret-position="67">
+          <caret line="22" column="4" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="4" />
+          <folding>
+            <element signature="e#315#533#0" expanded="true" />
+            <element signature="e#532#533#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/chielong/pattern/Singleton/总结单例模式.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="10" lean-forward="true" selection-start-line="1" selection-start-column="10" selection-end-line="1" selection-end-column="10" />
+        <state relative-caret-position="102">
+          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/chielong/pattern/Singleton/lazy/LazyInnerClassSingleton.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="32" column="18" selection-start-line="32" selection-start-column="12" selection-end-line="32" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ScopeChooserConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
   </component>
 </project>

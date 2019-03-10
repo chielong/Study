@@ -1,4 +1,4 @@
-package chielong.pattern.Singleton.container;
+package chielong.pattern.Singleton.register;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -9,6 +9,7 @@ public class ContainerSingleton {
 
     }
 
+    //或者是传入className,反射做。
     public Object get(String beanName) {
         Object bean = map.get(beanName);
         if(null != bean) {
