@@ -1,4 +1,4 @@
-package chielong.pattern.proxy.restructure;
+package chielong.pattern.prototype.restructure;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package chielong.pattern.proxy.restructure;
+package chielong.pattern.prototype.restructure;
 
 public class Account {
     private long cardNumber;
