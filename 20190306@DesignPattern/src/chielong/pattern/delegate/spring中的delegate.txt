@@ -1,0 +1,4 @@
+DispatcherServlet就是一个委派模式
+
+@Mapping("/value")
+就是一个key（任务），交给我们自定义的Controller或者Service来做。
