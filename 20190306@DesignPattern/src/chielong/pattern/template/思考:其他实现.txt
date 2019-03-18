@@ -1,0 +1,33 @@
+模板方式的侧重点在于
+    已经有一套可以直接使用的方法，但是某个方法处理未知，所以用子类的具体实现来操作
+
+如果用其他方式可以用：接口+门面
+比如以下形式:
+
+//用来模拟IoC容器的初始化
+public class IoC {
+    private final ILoader load;
+    private final IScaner scan;
+    private final Register register;
+
+    private List<String> classNames;
+    private Map<String , Object> beanMap;
+
+    public(ILoader load , IScaner scan) {
+        this.load = load;
+        this.scan = scan;
+        register = new Register();
+    }
+
+    // getters
+
+    private void iniy() {
+        load.loadBeanDefinitions();
+        scan.scanBeanDefinitions();
+        register.resgisteryBeanDefinitions();
+    }
+
+    ...
+}
+
+以这种形式用来组合。
