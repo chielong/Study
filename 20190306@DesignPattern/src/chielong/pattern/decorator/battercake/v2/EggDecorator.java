@@ -1,8 +1,8 @@
-package chielong.pattern.decorator;
+package chielong.pattern.decorator.battercake.v2;
 
 public class EggDecorator extends BattercakeDecorator {
 
-    public EggDecorator(Batterccake batterccake) {
+    public EggDecorator(Battercake batterccake) {
         super(batterccake);
     }
 

@@ -1,10 +1,10 @@
-package chielong.pattern.decorator;
+package chielong.pattern.decorator.battercake.v2;
 
-public class BattercakeDecorator extends Batterccake{
+public class BattercakeDecorator extends Battercake {
 
-    private Batterccake batterccake;
+    private Battercake batterccake;
 
-    public BattercakeDecorator(Batterccake batterccake) {
+    public BattercakeDecorator(Battercake batterccake) {
         this.batterccake = batterccake;
     }
 
