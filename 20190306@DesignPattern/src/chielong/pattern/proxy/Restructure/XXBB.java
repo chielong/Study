@@ -1,4 +1,4 @@
-package chielong.pattern.proxy.Restructure;
+package chielong.pattern.proxy.restructure;
 
 public class XXBB implements Wantable{
 

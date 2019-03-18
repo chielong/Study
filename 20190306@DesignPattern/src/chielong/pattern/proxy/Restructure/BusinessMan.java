@@ -1,4 +1,4 @@
-package chielong.pattern.proxy.Restructure;
+package chielong.pattern.proxy.restructure;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
