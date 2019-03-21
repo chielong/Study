@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="7998418c-1359-49bc-aa21-06279e0c68c7" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/20190306@DesignPattern.iml" beforeDir="false" afterPath="$PROJECT_DIR$/20190306@DesignPattern.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/chielong/pattern/decorator/装饰模式总结.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/chielong/pattern/decorator/装饰模式总结.txt" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -16,10 +14,10 @@
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/chielong/pattern/observer/guava/GuavaEventTest.java">
+        <entry file="file://$PROJECT_DIR$/src/chielong/pattern/设计模式总结.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="13" column="34" selection-start-line="13" selection-start-column="34" selection-end-line="13" selection-end-column="34" />
+            <state relative-caret-position="340">
+              <caret line="20" column="31" selection-start-line="20" selection-start-column="31" selection-end-line="20" selection-end-column="31" />
             </state>
           </provider>
         </entry>
@@ -55,7 +53,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/chielong/life/GrowingOld.java" />
         <option value="$PROJECT_DIR$/src/chielong/life/LifeTest.java" />
         <option value="$PROJECT_DIR$/src/chielong/pattern/decorator/Batterccake.java" />
         <option value="$PROJECT_DIR$/src/chielong/pattern/decorator/BattercakeDecorator.java" />
@@ -106,6 +103,7 @@
         <option value="$PROJECT_DIR$/src/chielong/pattern/observer/guava/GuavaEvent.java" />
         <option value="$PROJECT_DIR$/src/chielong/pattern/observer/guava/GuavaTeacher.java" />
         <option value="$PROJECT_DIR$/src/chielong/pattern/observer/guava/GuavaEventTest.java" />
+        <option value="$PROJECT_DIR$/src/chielong/pattern/设计模式总结.txt" />
       </list>
     </option>
   </component>
@@ -120,9 +118,9 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="y" value="366" />
+    <option name="y" value="23" />
     <option name="width" value="1440" />
-    <option name="height" value="534" />
+    <option name="height" value="877" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
@@ -132,7 +130,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -167,12 +164,13 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1552920241157" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553091857291" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="GenericSQL" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -270,16 +268,19 @@
       <workItem from="1552892400212" duration="369000" />
       <workItem from="1552892828686" duration="13757000" />
       <workItem from="1552919385452" duration="857000" />
+      <workItem from="1553085306995" duration="4360000" />
+      <workItem from="1553148075432" duration="1736000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="61569000" />
+    <option name="totallyTimeSpent" value="67665000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="366" width="1440" height="534" extended-state="0" />
+    <frame x="0" y="23" width="1440" height="877" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25035766" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25751072" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -345,13 +346,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/chielong/pattern/adapter/login/v2/adapters/RegisterAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/chielong/pattern/adapter/login/v2/adapters/LoginForQQAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="111">
@@ -828,8 +822,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/chielong/pattern/observer/guava/GuavaEventTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="34" selection-start-line="13" selection-start-column="34" selection-end-line="13" selection-end-column="34" />
+        <state relative-caret-position="187">
+          <caret line="11" column="30" lean-forward="true" selection-start-line="11" selection-start-column="30" selection-end-line="11" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/chielong/pattern/设计模式总结.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="31" selection-start-line="20" selection-start-column="31" selection-end-line="20" selection-end-column="31" />
         </state>
       </provider>
     </entry>
