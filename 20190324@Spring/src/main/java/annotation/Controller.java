@@ -1,11 +1,10 @@
-package v1.annotation;
-
+package annotation;
 
 import java.lang.annotation.*;
 
 @Retention(RetentionPolicy.RUNTIME)
-@Target({ElementType.TYPE , ElementType.METHOD})
+@Target(ElementType.TYPE)
 @Documented
-public @interface RequestMapping {
+public @interface Controller {
     String value() default "";
 }

@@ -1,0 +1,11 @@
+Spring中的Bean是线程安全的吗？
+    spring中的bean是从哪里来的？
+    初始化，通过扫描，利用反射new出来的。并缓存到ioc容器之中。
+    spring并没有对bean做任何处理。
+    bean是不是线程安全的，取决于bean本身。
+    bean本身是我们自己写的代码。
+
+Spring中的Bean是如何被回收的？
+    spring中的bean生命周期的问题
+    singleton:ioc本身就是单例，基于spring上下文的。
+    prototype、session、request

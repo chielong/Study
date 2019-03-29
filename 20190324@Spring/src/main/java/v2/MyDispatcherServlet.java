@@ -1,4 +1,4 @@
-package v1;
+package v2;
 
 import annotation.*;
 
@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
+import java.lang.annotation.Annotation;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -73,16 +74,56 @@ public class MyDispatcherServlet extends HttpServlet {
             return ;
         }
 
+        Map<String , String[]> params = request.getParameterMap();
         Method method = this.handlerMapping.get(url);
+        Class<?>[] parameterTypes = method.getParameterTypes();
+        Object[] paramValues = new Object[parameterTypes.length];
+        for(int i = 0 ; i < parameterTypes.length ; i++) {
+            Class parameterType = parameterTypes[i];
+            if(parameterType == HttpServletRequest.class) {
+                paramValues[i] = request;
+            } else if (parameterType == HttpServletResponse.class) {
+                paramValues[i] = response;
+            } else if (parameterType == String.class) {
+                Annotation[][] pa = method.getParameterAnnotations();
+
+                for(int index = 0 ; index < pa.length ; index++) {
+                    for(Annotation a : pa[index]) {
+                        if(!(a instanceof RequestParam)) {
+                            continue;
+                        }
+                        String paramName = ((RequestParam) a).value();
+                        if(params.containsKey(paramName)) {
+                            for(Map.Entry<String , String[]> param : params.entrySet()) {
+                                String value = Arrays.toString(params.get(param))
+                                        .replaceAll("\\[|\\]" , "")
+                                        .replaceAll("\\s" , ",");
+                                paramValues[i] = convert(parameterType , Arrays.toString(param.getValue()));
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+
         //弄丢了了对象->弄丢了key
         String beanName = toLowerFirstCase(method.getDeclaringClass().getSimpleName());
         try {
-            method.invoke(ioc.get(beanName) , new Object[] {request , response , null});
+            method.invoke(ioc.get(beanName) , paramValues);
         } catch (IllegalAccessException e) {
             e.printStackTrace();
         } catch (InvocationTargetException e) {
             e.printStackTrace();
         }
+    }
+
+    private Object convert(Class<?> type , String value) {
+        if(Integer.class == type) {
+            return Integer.valueOf(value);
+        }
+
+        return value;
     }
 
     private void initHandleMapping() {

@@ -1,0 +1,77 @@
+ClassPathXmlApplicationContext
+    extends AbstractXmlApplicationContext
+        注:AbstractXmlApplicationContext是个抽象类，其父类为AbstractRefreshableConfigApplicationContext
+        AbstractRefreshableConfigApplicationContext的祖父类就是调用AbstractApplicationConext
+
+    ClassPathXmlApplicationContext的构造方法(参数是配置文件的路径) {
+        setConfigLocations(configLocation);//->AbstractRefreshableConfigApplicationContext#setConfigLocation()
+        if(refresh) {
+            refresh(); //->调用AbstractApplicationConext的refresh()方法
+        }
+    }
+
+
+AbstractApplicationConext
+    public void refresh() throws BeansException, IllegalStateException {
+        synchronized (this.startupShutdownMonitor) {
+            prepareRefresh();
+            ConfigurableListableBeanFactory beanFactory = obtainFreshBeanFactory();//->本类的方法obtainFreshBeanFactory()
+            prepareBeanFactory(beanFactory);
+            try {
+                postProcessBeanFactory(beanFactory);
+                invokeBeanFactoryPostProcessors(beanFactory);
+                registerBeanPostProcessors(beanFactory);
+                initMessageSource();
+                initApplicationEventMulticaster();
+                onRefresh();
+                registerListeners();
+                finishBeanFactoryInitialization(beanFactory);
+                finishRefresh();
+            } catch (BeansException ex) {
+                destroyBeans();
+                cancelRefresh(ex);
+                throw ex;
+            } finally {
+                resetCommonCaches();
+            }
+        }
+    }
+AbstractApplicationConext
+    obtainFreshBeanFactory()//->AbstractRefreshableConfigApplicationContext#refreshBeanFactory()
+    注：refreshBeanFactory是protected abstract。由其子类实现。这里用到了AbstractRefreshableApplicationContext的实现。
+
+AbstractRefreshableApplicationContext
+    refreshBeanFactory()//->AbstractXmlApplicationContext#loadBeanDefinitions()
+    注：loadBeanDefinitions()是protected abstract。由其子类实现。这里用到了AbstractXmlApplicationContext的实现。
+
+AbstractXmlApplicationContext
+    在本类中loadBeanDefinition()进行了重载分别为
+        protected void loadBeanDefinitions(DefaultListableBeanFactory);
+        protected void loadBeanDefinitions(XmlBeanDefinitionReader);
+    其中第一个重载方法调用了第二个重载方法。
+    loadBeanDefinition()//->XmlBeanDefinitionReader#loadBeanDefinitions();
+
+XmlBeanDefinitionReader
+    在本类中loadBeanDefinitions也有大量重载，且相互调用，但是总会doLoadBeanDefinitions()
+    doLoadBeanDefinitions()//->XmlBeanDefinitionReader#registerBeanDefinitions()
+    registerBeanDefinitions()//->BeanDeinitionDocumentReader#registerBeanDefinitions()
+    注：BeanDeinitionDocumentReader是个接口，这里用到了DefaultBeanDeinitionDocumentReader的实现。
+
+DefaultBeanDefinitionDocumentReader
+    registerBeanDefinitions()//->DefaultBeanDefinitionDocumentReader#doRegisterBeanDefinitions()
+    doRegisterBeanDefinitions()//->DefaultBeanDefinitionDocumentReader#parseBeanDefinitions()
+    parseBeanDefinitions()//->DefaultBeanDefinitionDocumentReader#parseDefaultElement()
+    注："import", "alias", "bean"
+    parseDefaultElement()//->DefaultBeanDefinitionDocumentReader#processBeanDefinition()
+    processBeanDefinition()//->BeanDefinitionParserDelegate#parseBeanDefinitionElement()
+                           //->BeanDefinitionReaderUtils#registerBeanDefinition()
+
+BeanDefinitionParserDelegate
+    具体解析之后返回DefaultBeanDefinitionDocumentReader#processBeanDefinition()中继续执行
+
+BeanDefinitionReaderUtils
+    registerBeanDefinition()//->BeanDefinitionRegistry#registerBeanDefinition()
+    注：BeanDefinitionRegistry是个接口，这里用到了DefaultListableBeanFactory的实现。
+
+DefaultListableBeanFactory
+    registerBeanDefinition()

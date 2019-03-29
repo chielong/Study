@@ -1,4 +1,4 @@
-package v1;
+package v3;
 
 import annotation.*;
 
@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
+import java.lang.annotation.Annotation;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -30,6 +31,8 @@ public class MyDispatcherServlet extends HttpServlet {
     private List<String> classNames = new ArrayList<String>();
     private Map<String , Object> ioc = new HashMap<String , Object>();
     private Map<String , Method> handlerMapping = new HashMap<String , Method>();
+
+    private List<HandlerMapping> handlers = new ArrayList<HandlerMapping>();
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -60,29 +63,92 @@ public class MyDispatcherServlet extends HttpServlet {
     }
 
     public void doDispatch(HttpServletRequest request , HttpServletResponse response) {
-        String url = request.getRequestURI();
-        String contextPath = request.getContextPath();
-        url = url.replaceAll(contextPath , "").replaceAll("/+" , "/");
 
-        if(!this.handlerMapping.containsKey(url)) {
+        HandlerMapping handlerMapping = getHandler(request);
+        if(null == handlerMapping) {
             try {
-                response.getWriter().write("404");
+                response.getWriter().write("--404--");
             } catch (IOException e) {
                 e.printStackTrace();
             }
             return ;
         }
 
+        Class<?>[] paramTypes = handlerMapping.getParameterTypes();
+        Object[] paramValues = new Object[paramTypes.length];
+        Map<String , String[]> params = new HashMap<String , String[]>();
+        for(Map.Entry<String , String[]> param : params.entrySet()) {
+
+        }
+
+
+        Map<String , String[]> params = request.getParameterMap();
         Method method = this.handlerMapping.get(url);
+        Class<?>[] parameterTypes = method.getParameterTypes();
+        Object[] paramValues = new Object[parameterTypes.length];
+        for(int i = 0 ; i < parameterTypes.length ; i++) {
+            Class parameterType = parameterTypes[i];
+            if(parameterType == HttpServletRequest.class) {
+                paramValues[i] = request;
+            } else if (parameterType == HttpServletResponse.class) {
+                paramValues[i] = response;
+            } else if (parameterType == String.class) {
+                Annotation[][] pa = method.getParameterAnnotations();
+
+                for(int index = 0 ; index < pa.length ; index++) {
+                    for(Annotation a : pa[index]) {
+                        if(!(a instanceof RequestParam)) {
+                            continue;
+                        }
+                        String paramName = ((RequestParam) a).value();
+                        if(params.containsKey(paramName)) {
+                            for(Map.Entry<String , String[]> param : params.entrySet()) {
+                                String value = Arrays.toString(params.get(param))
+                                        .replaceAll("\\[|\\]" , "")
+                                        .replaceAll("\\s" , ",");
+                                paramValues[i] = convert(parameterType , Arrays.toString(param.getValue()));
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+
+
         //弄丢了了对象->弄丢了key
         String beanName = toLowerFirstCase(method.getDeclaringClass().getSimpleName());
         try {
-            method.invoke(ioc.get(beanName) , new Object[] {request , response , null});
+            method.invoke(ioc.get(beanName) , paramValues);
         } catch (IllegalAccessException e) {
             e.printStackTrace();
         } catch (InvocationTargetException e) {
             e.printStackTrace();
         }
+    }
+
+    private HandlerMapping getHandler(HttpServletRequest request) {
+        if(null == request.getParameterMap()) {
+            return null;
+        }
+
+        String url = request.getRequestURI();
+        String contextPath = request.getContextPath();
+        url = url.replaceAll(contextPath , "").replaceAll("/+" , "/");
+
+        if(!this.handlerMapping.containsKey(url)) {
+            return null;
+        }
+
+        return null;
+    }
+
+    private Object convert(Class<?> type , String value) {
+        if(Integer.class == type) {
+            return Integer.valueOf(value);
+        }
+
+        return value;
     }
 
     private void initHandleMapping() {

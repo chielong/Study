@@ -1,0 +1,48 @@
+IOC控制反转:
+    所谓控制反转，就是把原先我们代码里面需要实现的对象创建、依赖的代码，反转给容器来帮忙实现。
+DI依赖注入:
+    指对象是被动接受依赖类而不是自己主动去找。
+    换句话说就是指对象不是从容器中查找他的依赖类，而是在容器实例化对象的时候主动将它依赖的类注入给他。
+
+对象和对象之间的关系？
+    xml/properties
+
+描述对象和对象关系的文件放在哪里？
+    classpath/network/filesystem/servletContext
+
+统一配置文件标准？
+    BeanDefinition
+
+如何实现？
+    (接口-接口-接口-抽象类-实现类)
+    BeanFactory（以及它的徒子徒孙们）
+        |--
+
+    BeanDefinition
+        |--
+
+    BeanDefinitionReader
+        |--AbstractBeanDefinitionReader
+                |--XmlBeanDefinitionReader
+
+ioc容器初始化三部曲
+    1.定位：定位配置文件和扫描相关注解
+        1.1寻找入口                 refresh()
+        1.2获取配置文件的路径        getResource()
+        1.3容器开始启动              refreshBeanFactory()
+        1.4开始解析配置文件路径       getResourceByPath()
+        1.5载入配置路径               loadBeanDefinitions()
+        1.6分配路径处理策略             delegate()
+        1.7解析配置文件路径             DefaultBeanDefinitionDocumentReader
+        1.8加载配置文件信息
+        1.9开始解析配置文件            loadDocument()
+    2.加载：将配置信息载入到内存中
+        2.1分配解析配置文件策略           BeanDefinitionDocumentLoader
+        2.2将配置文件载入到内存           registerBeanDefinition
+        2.3载入<bean>元素               parseDefaultElement
+        2.4载入<property>
+        2.5载入<property>子元素
+        2.6载入<list>元素
+    3.注册：根据载入的信息，将对象初始化到ioc容器中
+        3.1分配注册策略               BeanDefinitionReaderUtils.registerBeanDefinition()
+        3.2开始想容器注册              DefaultListableBeanFactory.registerBeanDefinition()
