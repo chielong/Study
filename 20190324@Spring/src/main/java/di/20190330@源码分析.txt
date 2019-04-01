@@ -19,7 +19,7 @@ AbstractPropertyAccessor
     setPropertyValues()//->AbstractNestablePropertyAccessor#setPropertyValue()
 AbstractNestablePropertyAccessor
     setPropertyValue()//->AbstractNestablePropertyAccessor#processLocalProperty()
-    processLocalProperty()//->setValue()
+    processLocalProperty()//->AbstractNestablePropertyAccessor.PropertyHandler#setValue()
     注：setValue()是该类protected abstract static内部类方法由BeanWrapperImpl的内部类BeanPropertyHandler实现
-BeanPropertyHandler
+BeanWrapperImpl.BeanPropertyHandler
     setValue()
