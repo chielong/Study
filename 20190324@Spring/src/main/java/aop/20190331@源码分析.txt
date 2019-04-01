@@ -1,0 +1,56 @@
+AbstractAutowireCapableBeanFactory
+    createBean()//->AbstractAutowireCapableBeanFactory#doCreateBean()
+    doCreateBean()//->AbstractAutowireCapableBeanFactory#initializeBean()
+    initializeBean()//->AbstractAutowireCapableBeanFactory#applyBeanPostProcessorsAfterInitialization()
+    applyBeanPostProcessorsAfterInitialization()//->AbstractAutoProxyCreator#postProcessAfterInitialization()
+AbstractAutoProxyCreator
+    postProcessAfterInitialization()//->AbstractAutoProxyCreator#wrapIfNecessary()
+    wrapIfNecessary()//->AbstractAutoProxyCreator#getAdvicesAndAdvisorsForBean()
+                     注：由子类AbstractAdvisorAutoProxyCreator实现
+                     //->AbstractAutoProxyCreator#createProxy()
+    createProxy()//->ProxyFactory#getProxy()
+AbstractAutoProxyCreator
+    getAdvicesAndAdvisorsForBean()//->AbstractAutoProxyCreator#findEligibleAdvisors()
+    findEligibleAdvisors()//->AbstractAutoProxyCreator#sortAdvisors()
+    sortAdvisors()//->AnnotationAwareOrderComparator#sort()
+    注：源码中是直接使用AnnotationAwareOrderComparator.sort(List);
+        而在AnnotationAwareOrderComparator中恰好有静态sort(List)方法。
+        其中的实现是靠java.util.Collections#sort(java.util.List, java.util.Comparator)实现
+        源码为：Collections.sort(list, INSTANCE);
+        这个INSTANCE是AnnotationAwareOrderComparator的public static final AnnotationAwareOrderComparator(就是本类)
+        AnnotationAwareOrderComparator又继承自OrderComparator，而OrderComparator实现了Comparator<Object>
+        并且重写了compare()方法。最终调用了OrderComparator的doCompare()
+OrderComparator
+    doCompare()//->返回AbstractAutoProxyCreator的wrapIfNecessary()方法中
+AbstractAutoProxyCreator
+    createProxy()//->ProxyCreatorSupport#getProxy()
+ProxyFactory
+    getProxy()//->ProxyCreatorSupport#createAopProxy()
+    注：ProxyFactory的父类是ProxyCreatorSupport
+        ProxyCreatorSupport中有一个AopProxyFactory类型的字段
+        AopProxyFactory接口中定义了createAopProxy方法，这里用了DefaultAopProxyFactory的实现
+DefaultAopProxyFactory
+    createAopProxy()//->返回一个AopProxy对象给AbstractAutoProxyCreator#createProxy()
+    注：在这里根据Jdk动态代理特点和Cglib特点判定，用应该用的方法去实现一个代理
+    源码(删除一个抛异常的判断)为：
+        --------------------------------------------------------------------
+        |@Override
+        |	public AopProxy createAopProxy(AdvisedSupport config) throws AopConfigException {
+        |		if (config.isOptimize() || config.isProxyTargetClass() || hasNoUserSuppliedProxyInterfaces(config)) {
+        |			Class<?> targetClass = config.getTargetClass();
+        |			if (targetClass.isInterface() || Proxy.isProxyClass(targetClass)) {
+        |				return new JdkDynamicAopProxy(config);
+        |			}
+        |			return new ObjenesisCglibAopProxy(config);
+        |		}
+        |		else {
+        |			return new JdkDynamicAopProxy(config);
+        |		}
+        |	}
+        ----------------------------------------------------------------------
+
+当调用时：
+JdkDynamicAopProxy
+    invoke()//->AdvisedSupport#getInterceptorsAndDynamicInterceptionAdvice()
+            //->ReflectiveMethodInvocation#proceed()
+            //->AopUtils#invokeJoinpointUsingReflection()

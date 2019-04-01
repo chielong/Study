@@ -41,29 +41,3 @@ AbstractAutowireCapableBeanFactory#getProxy()保存到BeanWrapper
     JDK/CGLib
     List<ReflectiveMethodIntercepter>和proceed()
     适配器Advice:Before、After
-
-
-
-AbstractAutowireCapableBeanFactory
-    initializeBean()//->AbstractAutowireCapableBeanFactory#applyBeanPostProcessorsAfterInitialization()
-    applyBeanPostProcessorsAfterInitialization()//->AbstractAutoProxyCreator#postProcessAfterInitialization()
-AbstractAutoProxyCreator
-    postProcessAfterInitialization()//->AbstractAutoProxyCreator#wrapIfNecessary()
-    wrapIfNecessary()//->AbstractAutoProxyCreator#getAdvicesAndAdvisorsForBean()
-                     注：由子类AbstractAdvisorAutoProxyCreator实现
-                     //->AbstractAutoProxyCreator#createProxy()
-    createProxy()//->ProxyFactory#getProxy()
-AbstractAutoProxyCreator
-    getAdvicesAndAdvisorsForBean()//->AbstractAutoProxyCreator#findEligibleAdvisors()
-    findEligibleAdvisors()//->
-
-ProxyFactory
-    getProxy()//->ProxyCreatorSupport#createAopProxy()
-DefaultAopProxyFactory
-    createAopProxy()//->DefaultAopProxyFactory#createAopProxy()
-    createAopProxy()//->返回一个AopProxy对象
-
-JdkDynamicAopProxy
-    invoke()//->AdvisedSupport#getInterceptorsAndDynamicInterceptionAdvice()
-            //->ReflectiveMethodInvocation#proceed()
-            //->MethodBeforeAdviceInterceptor#invoke()
