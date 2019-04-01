@@ -1,0 +1,25 @@
+BeanFactory
+    getBean()//->AbstractBeanFactory#getBean()
+AbstractBeanFactory
+    getBean()//->AbstractBeanFactory#doGetBean()
+    doGetBean()//->AbstractAutowireCapableBeanFactory#createBean()
+    注：AbstractAutowireCapableBeanFactory是AbstractBeanFactory子类
+AbstractAutowireCapableBeanFactory
+    createBean()//AbstractAutowireCapableBeanFactory#doCreateBean()
+    doCreateBean()//->AbstractAutowireCapableBeanFactory#createBeanInstance()
+                  //->AbstractAutowireCapableBeanFactory#populateBean()
+    createBeanInstance()//->AbstractAutowireCapableBeanFactory#instantiateBean()
+    instantiateBean()//->SimpleInstantiationStrategy#instantiate()
+SimpleInstantiationStrategy
+    instantiate()//返回AbstractAutowireCapableBeanFactory#doCreateBean()
+AbstractAutowireCapableBeanFactory
+    populateBean()//->AbstractAutowireCapableBeanFactory#applyPropertyValues()
+    applyPropertyValues()//->AbstractPropertyAccessor#setPropertyValues()
+AbstractPropertyAccessor
+    setPropertyValues()//->AbstractNestablePropertyAccessor#setPropertyValue()
+AbstractNestablePropertyAccessor
+    setPropertyValue()//->AbstractNestablePropertyAccessor#processLocalProperty()
+    processLocalProperty()//->setValue()
+    注：setValue()是该类protected abstract static内部类方法由BeanWrapperImpl的内部类BeanPropertyHandler实现
+BeanPropertyHandler
+    setValue()

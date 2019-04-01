@@ -10,7 +10,6 @@ ClassPathXmlApplicationContext
         }
     }
 
-
 AbstractApplicationConext
     public void refresh() throws BeansException, IllegalStateException {
         synchronized (this.startupShutdownMonitor) {

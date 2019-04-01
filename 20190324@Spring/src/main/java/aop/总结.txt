@@ -1,0 +1,69 @@
+几个概念
+1.切面(Aspect):面向规则，具有相同规则的方法的集合体
+2.通知(Advice):回调
+3.切入点(Pointcut):需要代理的具体方法
+4.代理对象(TargetObject):被代理的对象
+5.AOP代理(AOP Proxy):主要有两种方式JDK、CGLIB
+6.前置通知(BeforeAdvice):在invoke Pointcut之后调用，织入的方法
+7.后置通知(AfterAdvice):Pointcut之后调用，织入的方法
+8.返回后通知(After Retunrn Advice):返回值为非void，织入的方法
+9.环绕通知(Around Advice):只要触发调用，织入的方法
+10.异常通知(After Throwing Advice):Pointcut抛出异常，织入的方法
+
+主要流程
+1.寻找入口
+2.选择策略
+3.调用方法
+4.触发通知
+
+==========IOC/DI/AOP总结==========
+IOC
+BeanFactory
+ClassPathXmlApplicationContext#refresh()
+    定位:getResource()
+    加载:reader.loadBeanDefinition()
+    注册:registerBeanDefinition()
+        注册到:DefaultListableBeanFactory的Map<String , BeanDefinition> beanDefinitionMap中。
+        注册的事配置文件中的信息
+
+DI
+BeanFactory
+AbstractBeanFactory#getBean()
+    创建BeanWrapper
+        缓存在FactoryBeanRegistrySupport的Map<String , Object> factoryBeanObjectCache中。
+    保存到AbstractAutowireCapableBeanFactory的Map<String , BeanWrapper> factoryBeanInstanceCache中。
+BeanWrapperImpl#setValue()
+循环赋值？
+    Set<Class> autowired;
+
+AOP
+AbstractAutowireCapableBeanFactory#getProxy()保存到BeanWrapper
+    JDK/CGLib
+    List<ReflectiveMethodIntercepter>和proceed()
+    适配器Advice:Before、After
+
+
+
+AbstractAutowireCapableBeanFactory
+    initializeBean()//->AbstractAutowireCapableBeanFactory#applyBeanPostProcessorsAfterInitialization()
+    applyBeanPostProcessorsAfterInitialization()//->AbstractAutoProxyCreator#postProcessAfterInitialization()
+AbstractAutoProxyCreator
+    postProcessAfterInitialization()//->AbstractAutoProxyCreator#wrapIfNecessary()
+    wrapIfNecessary()//->AbstractAutoProxyCreator#getAdvicesAndAdvisorsForBean()
+                     注：由子类AbstractAdvisorAutoProxyCreator实现
+                     //->AbstractAutoProxyCreator#createProxy()
+    createProxy()//->ProxyFactory#getProxy()
+AbstractAutoProxyCreator
+    getAdvicesAndAdvisorsForBean()//->AbstractAutoProxyCreator#findEligibleAdvisors()
+    findEligibleAdvisors()//->
+
+ProxyFactory
+    getProxy()//->ProxyCreatorSupport#createAopProxy()
+DefaultAopProxyFactory
+    createAopProxy()//->DefaultAopProxyFactory#createAopProxy()
+    createAopProxy()//->返回一个AopProxy对象
+
+JdkDynamicAopProxy
+    invoke()//->AdvisedSupport#getInterceptorsAndDynamicInterceptionAdvice()
+            //->ReflectiveMethodInvocation#proceed()
+            //->MethodBeforeAdviceInterceptor#invoke()

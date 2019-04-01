@@ -1,0 +1,37 @@
+注解版:
+    AnnotationConfigApplicationContext
+
+==========spring自动装配之依赖注入==========
+
+IOC容器
+BeanFactory
+AbstractBeanFactory
+
+初始化方式获得BeanDefinition
+SimpleInstantiationStrategy
+
+依赖注入
+AbstractPropertyAccessor
+
+真正实例化
+BeanWrapper
+
+
+依赖注入发生的时间
+1.用户第一次调用getBean()方法时
+2.用户在配置文件中将<bean>元素配置了lazy-int=false的属性->延迟加载
+
+依赖注入执行细节(初始化+依赖注入)
+1.寻找入口
+2.开始实例化
+3.选择实例化策略
+4.执行实例化
+5.准备依赖注入
+6.解析注入规则
+7.注入赋值
+
+
+BeanFactory & FactoryBean
+    FactoryBean是Spring内部实现的规范，以"&"开头作为beanName。
+        Spring中的所有容器都是FactoryBean。
+        因为容器本身也是由容器管理，root来创建，都是单例放在ioc容器中。
