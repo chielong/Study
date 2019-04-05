@@ -1,0 +1,24 @@
+SpringMVC请求处理流程
+1.request->DispatcherServlet
+2.DispatcherServlet->HandlerMapping
+3.DispatcherServlet->Controller
+4.Controller->[ModelAndView]->DispatcherServlet
+5.DispatcherServlet->ViewResolver
+6.DispatcherServlet->View
+
+九大组件
+1.HandlerMappings               与Handler做一个映射。Handler就是具体干活的方法
+2.HandlerAdapters               request中的参数->Handler能处理的参数
+3.HandlerExceptionResolvers     把看不懂的异常转换
+4.ViewResolvers                 视图解析器。
+5.RequestToViewNameTranslator   从request中获取viewName。
+6.LocaleResolver                国际化解析器
+7.ThemeResolver                 模板解析器
+8.MultipartResolver             与上传有关
+9.FlashMapManager               闪存，参数中转
+
+SpringMVC使用建议
+1.Controller如果能保持单例，就尽量单例
+2.@RequestParam给具体的参数和url中的参数进行一对一匹配
+3.SpringMVC并没有对url和Method的对应关系进行缓存
+

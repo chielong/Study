@@ -1,0 +1,56 @@
+初始化
+HttpServletBean
+    init()//->FrameworkServlet#initServletBean()
+    注：FrameworkServlet是HttpServletBean的子类
+FrameworkServlet
+    initServletBean()//->FrameworkServlet#initWebApplicationContext()
+    initWebApplicationContext()//->DispatcherServlet#onRefresh()
+    注：FrameworkServlet的onRefresh()默认为空，由子类复写
+DispatcherServlet
+    onRefresh()//->DispatcherServlet#initStrategies()
+    下边是initStrategies()源码：
+        ----------------------------------------
+        1|    initMultipartResolver(context);
+        2|    initLocaleResolver(context);
+        3|    initThemeResolver(context);
+        4|    initHandlerMappings(context);
+        5|    initHandlerAdapters(context);
+        6|    initHandlerExceptionResolvers(context);
+        7|    initRequestToViewNameTranslator(context);
+        8|    initViewResolvers(context);
+        9|    initFlashMapManager(context);
+        ----------------------------------------
+运行
+DispatcherServlet
+    doService()//->DispatcherServlet#doDispatch()
+    doDispatch()//->DispatcherServlet#getHandler()
+    getHandler()//->HandlerMapping#getHandler()
+    注：HandlerMapping是一个接口，这里用到了AbstractHandlerMapping
+AbstractHandlerMapping
+    getHandler()//->AbstractHandlerMapping#getHandlerExecutionChain()
+    getHandlerExecutionChain()->返回DispatcherServlet#doDispatcher
+DispatcherServlet
+    doDispatch()//->DispatcherServlet#getHandlerAdapter()
+    getHandlerAdapter()//HandlerExecutionChain#applyPreHandle()
+HandlerExecutionChain
+    applyPreHandle()//->HandlerInterceptor#preHandler()
+HandlerInterceptor
+    preHandler()//->返回DispatcherServlet#doDispatch()
+DispatcherServlet
+    doDispatch()//AbstractHandlerMethodAdapter#handle()
+AbstractHandlerMethodAdapter
+    handle()//->AbstractHandlerMethodAdapter#handleInternal()
+    handleInternal()是抽象方法，这里用到了子类RequestMappingHandlerAdapter的实现
+RequestMappingHandlerAdapter
+    handleInternal()//->RequestMappingHandlerAdapter#invokeHandlerMethod()
+    invokeHandlerMethod()//RequestMappingHandlerAdapter#getModelAndView()
+    getModelAndView()->返回一个ModelAndView给DispatcherServlet#doDispatch()
+DispatcherServlet
+    doDispatch()//->HandlerExecutionChain#applyPostHandle()
+HandlerExecutionChain
+    applyPostHandle()//->HandlerInterceptor#postHandle()
+HandlerInterceptor
+    postHandle()//->返回DispatcherServlet#doDispatch()
+DispatcherServlet
+    doDispatch()//->DispatcherServlet#processDispatchResult()
+    processDispatchResult()//->DispatcherServlet#render()
