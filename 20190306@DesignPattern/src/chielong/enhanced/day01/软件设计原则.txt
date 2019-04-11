@@ -1,0 +1,45 @@
+@Author:chielong
+
+=====================================
+Q:在Java中，什么时候用重载，什么时候用重写？
+
+    思路：什么是重载，什么是重写，区别，然后过渡到什么时候用。
+
+    重载，overload。指的是函数签名的改变。这个函数签名在程序员写代码的时候指的是java语法层面上的不同。java语法层面上是：方法名，参数个数，参数类型。而在jvm层面上则是更加复杂的东西：访问限定，返回值类型，方法名，参数个数，参数类型。
+    重写，override。指的是函数内容的改变。即，函数处理流程的变化。
+    重载和重写，都是针对一个方法而言的。区别在于，重载，更侧重于一个方法外观不同；重写则是是一个方法处理流程不同。
+    重载举例：Object#wait()方法：
+        public final void wait(long timeoutMillis, int nanos) throws InterruptedException;
+        public final void wait() throws InterruptedException;
+    重写举例：
+        toString()方法的重写。
+    什么时候用重载：
+        1.希望一个方法能处理各种入参，比如：
+            String.valueof();
+            int -> String
+            double -> String
+        2.使用默认值的方式，这个是在线程池充分体现的重载：（我是jdk11）
+            public ForkJoinPool(int parallelism,
+                                    ForkJoinWorkerThreadFactory factory,
+                                    UncaughtExceptionHandler handler,
+                                    boolean asyncMode,
+                                    int corePoolSize,
+                                    int maximumPoolSize,
+                                    int minimumRunnable,
+                                    Predicate<? super ForkJoinPool> saturate,
+                                    long keepAliveTime,
+                                    TimeUnit unit);
+            并且提供其他的构造方法，但其他构造函数都调用这一个构造方法，调用时使用默认值。
+    什么时候用重写：
+        1.来自父类已实现的方法重写,希望实现本类"特色"
+            toString();
+        2.实现一个未完成方法。
+
+Q:举例一个你更强倾向于使用抽象类，而不是接口的代码设计场景？
+
+    思路：抽象类和接口区别，场景。
+
+    jdk1.8之后，允许接口有default方法。所以抽象类的和接口最核心的区别就是对于属性和方法的权限问题。
+    如果一个字段或者方法希望只限于本类访问，那么就需要用抽象类。
+
+    场景：比如代理模式，需要将target包裹起来。比如装饰器模式，需要包装一个东西。
