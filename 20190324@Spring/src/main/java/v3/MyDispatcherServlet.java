@@ -74,14 +74,6 @@ public class MyDispatcherServlet extends HttpServlet {
             return ;
         }
 
-        Class<?>[] paramTypes = handlerMapping.getParameterTypes();
-        Object[] paramValues = new Object[paramTypes.length];
-        Map<String , String[]> params = new HashMap<String , String[]>();
-        for(Map.Entry<String , String[]> param : params.entrySet()) {
-
-        }
-
-
         Map<String , String[]> params = request.getParameterMap();
         Method method = this.handlerMapping.get(url);
         Class<?>[] parameterTypes = method.getParameterTypes();

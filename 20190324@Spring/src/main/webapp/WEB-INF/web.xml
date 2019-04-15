@@ -5,6 +5,7 @@
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
 
+  <!--
   <servlet>
     <servlet-name>mymvc</servlet-name>
     <servlet-class>v1.MyDispatcherServlet</servlet-class>
@@ -14,5 +15,20 @@
     </init-param>
     <load-on-startup>1</load-on-startup>
   </servlet>
+  -->
+  
+  <servlet>
+    <servlet-name>higherspring</servlet-name>
+    <servlet-class>higher.webmvc.HigherDispatcherServlet</servlet-class>
+    <init-param>
+      <param-name>contextConfigLocation</param-name>
+      <param-value>classpath:application.properties</param-value>
+    </init-param>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>higherspring</servlet-name>
+    <url-pattern>/*</url-pattern>
+  </servlet-mapping>
 
 </web-app>

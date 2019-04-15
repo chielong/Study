@@ -3,6 +3,8 @@ package higher.beans.config;
 import lombok.Getter;
 import lombok.Setter;
 
+import javax.management.ConstructorParameters;
+
 @Getter
 @Setter
 public class HigherBeanDefinition {
@@ -18,4 +20,13 @@ public class HigherBeanDefinition {
 
     private String factoryBeanName;
 
+    private boolean singleton = true;
+
+    public HigherBeanDefinition() {
+    }
+
+    public HigherBeanDefinition(String beanClassName, String factoryBeanName) {
+        this.beanClassName = beanClassName;
+        this.factoryBeanName = factoryBeanName;
+    }
 }

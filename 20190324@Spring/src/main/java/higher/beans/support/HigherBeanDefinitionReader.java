@@ -13,14 +13,15 @@ import java.util.Properties;
 public class HigherBeanDefinitionReader {
     private String[] configLocations;
     private Properties config = new Properties();
-    private List<String> registryBeanClasses;
+    private List<String> registryBeanClasses = new ArrayList<String>();
 
     /**
      * 固定配置文件的key
      */
     private final String SCAN_PACKAGE = "scanPackage";
 
-    public HigherBeanDefinitionReader(String[] configLocations) {
+    public HigherBeanDefinitionReader(String... configLocations) {
+        this.configLocations = configLocations;
         doLoadConfig();
         doScanner(this.config.getProperty(SCAN_PACKAGE));
     }
@@ -62,33 +63,25 @@ public class HigherBeanDefinitionReader {
     public List<HigherBeanDefinition> loadBeanDefinitions() {
         List<HigherBeanDefinition> result = new ArrayList<HigherBeanDefinition>();
 
-        for(String className : registryBeanClasses) {
-            HigherBeanDefinition bd = doCreateBeanDeinition(className);
-            if(null == bd) {
-                continue;
+        try {
+            for(String className : registryBeanClasses) {
+                Class<?> clazz = Class.forName(className);
+                if(clazz.isInterface()) {
+                    continue;
+                }
+                result.add(new HigherBeanDefinition(clazz.getName() , toLowerFirstCase(clazz.getSimpleName())));
+
+                Class<?>[] interfaces = clazz.getInterfaces();
+                for (Class<?> i : interfaces) {
+                    result.add(new HigherBeanDefinition(clazz.getName() , i.getName()));
+                }
+
             }
-            result.add(bd);
+        } catch (Exception e) {
+            e.printStackTrace();
         }
 
         return result;
-    }
-
-    private HigherBeanDefinition doCreateBeanDeinition(String className) {
-        try {
-            Class<?> beanClass = Class.forName(className);
-            if(beanClass.isInterface()) {
-                return null;
-            }
-
-            HigherBeanDefinition beanDefinition = new HigherBeanDefinition();
-            beanDefinition.setBeanClassName(className);
-            beanDefinition.setFactoryBeanName(toLowerFirstCase(beanClass.getSimpleName()));
-
-            return beanDefinition;
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        }
-        return null;
     }
 
     public Properties getConfig() {
