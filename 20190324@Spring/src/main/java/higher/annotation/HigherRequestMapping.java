@@ -1,6 +1,5 @@
 package higher.annotation;
 
-
 import java.lang.annotation.*;
 
 @Retention(RetentionPolicy.RUNTIME)

@@ -2,7 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7998418c-1359-49bc-aa21-06279e0c68c7" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/20190306@DesignPattern/chielong/pattern/proxy/代理模式总结.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/20190306@DesignPattern/chielong/pattern/proxy/代理模式总结.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/chielong/enhanced/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/chielong/enhanced/Test.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../20190324@Spring/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../20190324@Spring/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../20190324@Spring/src/main/java/higher/annotation/HigherRequestMapping.java" beforeDir="false" afterPath="$PROJECT_DIR$/../20190324@Spring/src/main/java/higher/annotation/HigherRequestMapping.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../20190324@Spring/src/main/java/higher/context/HigherApplicationContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/../20190324@Spring/src/main/java/higher/context/HigherApplicationContext.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../20190324@Spring/src/main/java/higher/webmvc/HigherHandlerAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/../20190324@Spring/src/main/java/higher/webmvc/HigherHandlerAdapter.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -26,7 +32,17 @@
     <select />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/chielong/enhanced/day06/深究工厂模式.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="221">
+              <caret line="13" lean-forward="true" selection-end-line="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -57,11 +73,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/chielong/pattern/adapter/login/Member.java" />
-        <option value="$PROJECT_DIR$/src/chielong/pattern/adapter/login/ResultMsg.java" />
-        <option value="$PROJECT_DIR$/src/chielong/pattern/adapter/login/v1/SiginService.java" />
-        <option value="$PROJECT_DIR$/src/chielong/pattern/adapter/login/v1/SigninForThirdService.java" />
-        <option value="$PROJECT_DIR$/src/chielong/pattern/adapter/login/v2/IPassportForThird.java" />
         <option value="$PROJECT_DIR$/src/chielong/pattern/adapter/login/v2/adapters/adapters.java" />
         <option value="$PROJECT_DIR$/src/chielong/pattern/adapter/login/v2/adapters/LoginAdapter.java" />
         <option value="$PROJECT_DIR$/src/chielong/pattern/adapter/login/v2/adapters/RegisterAdapter.java" />
@@ -105,9 +116,14 @@
         <option value="$PROJECT_DIR$/src/chielong/enhanced/day01/重载重写与抽象类接口.txt" />
         <option value="$PROJECT_DIR$/src/chielong/enhanced/day01/Test.java" />
         <option value="$PROJECT_DIR$/src/chielong/enhanced/day01/软件设计原则.txt" />
-        <option value="$PROJECT_DIR$/src/chielong/enhanced/Test.java" />
         <option value="$PROJECT_DIR$/src/chielong/enhanced/day02/类和实例与上层.txt" />
         <option value="$PROJECT_DIR$/src/chielong/enhanced/day03/设计模式的分类.txt" />
+        <option value="$PROJECT_DIR$/src/chielong/enhanced/Singleton.java" />
+        <option value="$PROJECT_DIR$/src/chielong/enhanced/day04/深究单例.txt" />
+        <option value="$PROJECT_DIR$/src/chielong/enhanced/Test.java" />
+        <option value="$PROJECT_DIR$/src/chielong/enhanced/LazyDlcSingleton.java" />
+        <option value="$PROJECT_DIR$/src/chielong/enhanced/day05/原型模式.txt" />
+        <option value="$PROJECT_DIR$/src/chielong/enhanced/day06/深究工厂模式.txt" />
       </list>
     </option>
   </component>
@@ -141,7 +157,6 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -172,18 +187,20 @@
               <item name="20190306@DesignPattern" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="chielong" type="462c0819:PsiDirectoryNode" />
-              <item name="pattern" type="462c0819:PsiDirectoryNode" />
+              <item name="enhanced" type="462c0819:PsiDirectoryNode" />
+              <item name="day05" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1555057765015" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1555485348905" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="GenericSQL" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -192,18 +209,21 @@
     <property name="settings.editor.selected.configurable" value="editor.preferences.completion" />
   </component>
   <component name="RecentsManager">
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="chielong.pattern.adapter.power" />
-      <recent name="chielong.pattern.delegate.mvc" />
-      <recent name="OrderController" />
-      <recent name="chielong.pattern.delegate.simple" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/chielong/pattern/FactoryPattern" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/lib" />
       <recent name="$PROJECT_DIR$/src/chielong/pattern/uml" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/chielong/pattern/FactoryPattern" />
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="chielong.enhanced" />
+    </key>
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="chielong.pattern.adapter.power" />
+      <recent name="chielong.pattern.delegate.mvc" />
+      <recent name="OrderController" />
+      <recent name="chielong.pattern.delegate.simple" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -218,7 +238,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.LifeTest">
+  <component name="RunManager" selected="Application.Test">
     <configuration name="LifeTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="chielong.life.LifeTest" />
       <module name="20190306@DesignPattern" />
@@ -242,8 +262,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="chielong.enhanced.Test" />
+      <module name="20190306@DesignPattern" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="chielong.enhanced.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Test" />
         <item itemvalue="Application.LifeTest" />
         <item itemvalue="Application.Main" />
       </list>
@@ -286,16 +320,21 @@
       <workItem from="1554865890001" duration="3845000" />
       <workItem from="1554953814867" duration="2394000" />
       <workItem from="1555052959611" duration="3960000" />
+      <workItem from="1555314213372" duration="1011000" />
+      <workItem from="1555315252948" duration="3686000" />
+      <workItem from="1555382932680" duration="948000" />
+      <workItem from="1555483658242" duration="1419000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="77864000" />
+    <option name="totallyTimeSpent" value="84928000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="877" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26824033" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1988555" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -304,7 +343,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3275862" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3299363" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.2878981" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -334,91 +373,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/chielong/pattern/decorator/battercake/v1/BattercakeWithEgg.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="34" selection-start-line="10" selection-start-column="34" selection-end-line="10" selection-end-column="34" />
-          <folding>
-            <element signature="e#135#136#0" expanded="true" />
-            <element signature="e#172#173#0" expanded="true" />
-            <element signature="e#215#216#0" expanded="true" />
-            <element signature="e#254#255#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/chielong/pattern/decorator/battercake/v1/Battercake.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
-          <folding>
-            <element signature="e#96#97#0" expanded="true" />
-            <element signature="e#120#121#0" expanded="true" />
-            <element signature="e#156#157#0" expanded="true" />
-            <element signature="e#180#181#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/chielong/pattern/decorator/battercake/v2/BaseBatteracke.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/chielong/pattern/decorator/battercake/v2/BattercakeDecorator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-8">
-          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/chielong/pattern/decorator/battercake/v2/EggDecorator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/chielong/pattern/decorator/battercake/v2/Battercake.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="22" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/chielong/pattern/adapter/login/v1/SiginService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="163">
-          <caret line="22" column="22" lean-forward="true" selection-start-line="22" selection-start-column="22" selection-end-line="22" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/chielong/pattern/proxy/dynamic/Girl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/chielong/pattern/proxy/dbroute/DynamicDataSourceEntity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/chielong/pattern/proxy/dbroute/IOrderService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/chielong/pattern/proxy/dbroute/Order.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -706,6 +660,75 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/chielong/enhanced/day01/Test.java" />
+    <entry file="file://$PROJECT_DIR$/src/chielong/enhanced/day02/类和实例与上层.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="1" lean-forward="true" selection-start-line="3" selection-start-column="1" selection-end-line="3" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/chielong/enhanced/day01/软件设计原则.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret lean-forward="true" selection-end-line="2" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/chielong/pattern/设计模式总结.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-161">
+          <caret line="56" column="13" selection-start-line="56" selection-start-column="8" selection-end-line="56" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/chielong/enhanced/day03/设计模式的分类.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="2" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/chielong/pattern/singleton/lazy/LazyDlcSingleton.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="27" selection-start-line="16" selection-start-column="20" selection-end-line="16" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/chielong/enhanced/Singleton.java" />
+    <entry file="file://$PROJECT_DIR$/src/chielong/enhanced/LazyDlcSingleton.java" />
+    <entry file="file://$PROJECT_DIR$/src/chielong/enhanced/Test.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="8" selection-start-line="4" selection-start-column="8" selection-end-line="4" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/chielong/enhanced/day04/深究单例.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-161">
+          <caret selection-end-line="2" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/chielong/pattern/prototype/原型模式总结.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="18" selection-start-line="2" selection-start-column="18" selection-end-line="2" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/chielong/enhanced/day05/原型模式.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="2" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/chielong/pattern/factory/为什么要从设计模式开始.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/chielong/pattern/factory/AbstractFactory/CharacterFactory.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -713,7 +736,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/chielong/pattern/factory/AbstractFactory/SwordCharacterFactory.java">
+    <entry file="file://$PROJECT_DIR$/src/chielong/pattern/factory/AbstractFactory/WizardCharacterFactory.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
@@ -734,39 +757,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/chielong/enhanced/day01/Test.java" />
-    <entry file="file://$PROJECT_DIR$/src/chielong/enhanced/Test.java">
+    <entry file="file://$PROJECT_DIR$/src/chielong/pattern/factory/uml/工厂模式.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/chielong/pattern/factory/AbstractFactory/SwordCharacterFactory.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="4" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="4" />
+        <state relative-caret-position="34">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/chielong/enhanced/day02/类和实例与上层.txt">
+    <entry file="file://$PROJECT_DIR$/src/chielong/enhanced/day06/深究工厂模式.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="1" lean-forward="true" selection-start-line="3" selection-start-column="1" selection-end-line="3" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/chielong/enhanced/day01/软件设计原则.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret lean-forward="true" selection-end-line="2" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/chielong/enhanced/day03/设计模式的分类.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="24" lean-forward="true" selection-end-line="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/chielong/pattern/设计模式总结.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-161">
-          <caret line="56" column="13" selection-start-line="56" selection-start-column="8" selection-end-line="56" selection-end-column="13" />
+        <state relative-caret-position="221">
+          <caret line="13" lean-forward="true" selection-end-line="13" />
         </state>
       </provider>
     </entry>

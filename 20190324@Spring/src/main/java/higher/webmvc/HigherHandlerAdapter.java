@@ -6,7 +6,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.lang.annotation.Annotation;
 import java.lang.reflect.InvocationTargetException;
-import java.net.http.HttpResponse;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
@@ -28,7 +27,7 @@ public class HigherHandlerAdapter {
                     continue;
                 }
                 String paramName = ((HigherRequestParam)annotation).value();
-                if("".equals(paramName)) {
+                if("".equals(paramName.trim())) {
                     continue;
                 }
                 paramIndexMapping.put(paramName , i);
@@ -58,8 +57,8 @@ public class HigherHandlerAdapter {
             int reqIndex = paramIndexMapping.get(HttpServletRequest.class.getName());
             paramValues[reqIndex] = request;
         }
-        if(paramIndexMapping.containsKey(HttpResponse.class.getName())) {
-            int reqIndex = paramIndexMapping.get(HttpResponse.class.getName());
+        if(paramIndexMapping.containsKey(HttpServletResponse.class.getName())) {
+            int reqIndex = paramIndexMapping.get(HttpServletResponse.class.getName());
             paramValues[reqIndex] = response;
         }
 

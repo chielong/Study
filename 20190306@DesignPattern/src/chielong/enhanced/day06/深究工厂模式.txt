@@ -1,0 +1,13 @@
+@Author:chielong
+
+=====================================
+Q:工厂类需要私有化构造方法吗？
+    需要分情况。
+    比如Spring中有一个ProxyFactory,每次都是new出来使用的。（归根结底是DefaultAopProxyFactory）
+    再比如Mybatis中的SqlSessionFactory，看似由SqlSessionFactoryBuilder.build(...)出来是单例的，但是实际却是：new DefaultSqlSessionFactory(config);
+    所以工厂类并不一定需要私有构造方法。
+    但是如果我们自己实现一个Factory，要求只读取一次配置，而后每次使用都快速生成对象。那么就需要私有构造方法并且保持单例了。
+
+Q:如何用最精简的语句描述产品等级结构和产品族？
+    产品等级结构：一家公司的不同商品。
+    产品族：多家公司的相同商品。

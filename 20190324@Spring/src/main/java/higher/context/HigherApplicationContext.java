@@ -3,6 +3,11 @@ package higher.context;
 import higher.annotation.HigherAutowired;
 import higher.annotation.HigherController;
 import higher.annotation.HigherService;
+import higher.aop.HigherAopProxy;
+import higher.aop.HigherCglibAopProxy;
+import higher.aop.HigherJdkDynamicAopProxy;
+import higher.aop.config.HigherAopConfig;
+import higher.aop.support.HigherAdvisedSupport;
 import higher.beans.HigherBeanWrapper;
 import higher.beans.config.HigherBeanPostProcessor;
 import higher.core.HigherBeanFactory;
@@ -136,6 +141,14 @@ public class HigherApplicationContext extends HigherDefaultListableBeanFactory i
             } else {
                 Class<?> clazz = Class.forName(className);
                 instance = clazz.newInstance();
+
+                HigherAdvisedSupport config = instantionAopConfig(higherBeanDefinition);
+                config.setTargetClass(clazz);
+                config.setTarget(instance);
+                if(config.pointCutMatch()) {
+                    instance = createPorxy(config).getPorxy();
+                }
+
                 this.factoryBeanObjectCache.put(className , instance);
                 this.factoryBeanObjectCache.put(higherBeanDefinition.getFactoryBeanName() , instance);
             }
@@ -147,6 +160,26 @@ public class HigherApplicationContext extends HigherDefaultListableBeanFactory i
             e.printStackTrace();
         }
         return  instance;
+    }
+
+    private HigherAopProxy createPorxy(HigherAdvisedSupport config) {
+        Class targetClass = config.getTargetClass();
+        if(targetClass.getInterfaces().length > 0) {
+            return new HigherJdkDynamicAopProxy(config);
+        }
+        return new HigherCglibAopProxy(config);
+    }
+
+    private HigherAdvisedSupport instantionAopConfig(HigherBeanDefinition higherBeanDefinition) {
+        HigherAopConfig config = new HigherAopConfig();
+        config.setPointCut(this.beanDefinitionReader.getConfig().getProperty("pointcut"));
+        config.setAspectClass(this.beanDefinitionReader.getConfig().getProperty("aspectClass"));
+        config.setAspectBefore(this.beanDefinitionReader.getConfig().getProperty("aspectBefore"));
+        config.setAspectAfter(this.beanDefinitionReader.getConfig().getProperty("aspectAfter"));
+        config.setAspectAfterThrow(this.beanDefinitionReader.getConfig().getProperty("aspectAfterThrow"));
+        config.setAspectAfterThrowingName(this.beanDefinitionReader.getConfig().getProperty("aspectAfterThrowingName"));
+
+        return new HigherAdvisedSupport(config);
     }
 
     public String[] getBeanDefinitionNames() {

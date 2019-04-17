@@ -1,0 +1,105 @@
+关于设计模式，我的总结：
+    适配器模式：转接头。HDMI->VGA
+    装饰器模式：穿了一层又一层的衣服，但我还是我。
+    委派模式：目的是"分发任务+派遣工作"。重点是"派遣工作"。
+    工厂模式：带选项的定制化。
+    观察者模式：发布者和订阅者更贴切。
+    原型模式：克隆出一模一样的另一个自己。(重点:一模一样，另一个)
+    代理模式：目的是"加强"！
+    单例模式：老子天生独一份。
+    策略模式：目的是"分发任务"。
+    模板模式：大流程给你定好，你的工作按我的规矩来。
+
+SpringAOP
+    @Aspect
+
+SpringIoC
+    @Bean
+    @Component
+        @Service
+        @Controller
+        ...(小马哥说的@Component的派生性)
+
+SpringDI
+    @Autowired
+
+=======================================
+课堂笔记
+=======================================
+1.GOF23中设计模式和设计原则，整体认知
+    设计模式在于理解，不在于形式。
+    不要为了套用设计模式而使用设计模式。
+
+    设计模式是一门艺术
+    设计模式来源于生活。
+
+    创建型
+        工厂方法模式
+        抽象工厂模式
+        建造者模式
+        原型模式
+        单例模式
+    结构型
+        适配器模式
+        桥接模式
+        组合模式
+        装饰器模式
+        门面模式
+        享元模式
+        代理模式
+    行为型
+        解释器模式
+        模板方法模式
+        责任链模式
+        命令模式
+        迭代器模式
+        调解者模式
+        备忘录模式
+        挂插着模式
+        状态模式
+        策略模式
+        访问者模式
+
+    单例和工厂
+        工厂类一般就是被设计为单例。
+
+    策略和委派
+        策略是委派内部的实现形式，策略关注得失结果是否可以相互替代。
+        委派更关注
+
+    模版和工厂方法
+
+    模版方法和策略
+        1.模版方法和策略模式都有封装算法
+        2.策略模式是使不用算法可以相互替换，且不影响客户端应用层的使用
+        3.模板方法是针对定义一个算法的流程，将一些有细微差异的部分交给子类实现
+        4.模板模式不能改变算法流程，策略模式可以改变算法流程且可以替换。策略模式通常用来替代if...else...分支语句。
+
+    装饰者模式和静态代理
+        1.装饰者模式关注点在于给对象动态扩展、添加方法、而代理更加注重控制对对象的方法。
+        2.代理模式通常会在代理类中创建被代理对象的实例，而装饰者模式通常把装饰者作为构造参数。
+
+2.Spring中常用的设计模式对比
+    工厂模式        只对结果负责，封装创建过程   BeanFactory、Calender
+    单例模式        保证独一无二               ApplicationContext、Calender
+    原型模式        拔一根猴毛，吹出千万个       ArrayList、PrototypeBean
+    代理模式        找人办事，增强职责          ProxyFactoryBean、JdkDynamicAopProxy、CglibAopProxy
+    委派模式        干活算你的，功劳是我的       DispatcherServlet、BeanDefinitionParserDelegate
+    策略模式        用户选择，结果统一          InstantiationStrategy
+    模板模式        流程标准化，自己实现定制     JdbcTemplate、HttpServlet
+    适配器模式       兼容转换头                 AdvisorAdapter、HandlerAdapter
+    装饰器模式       包装、同宗同源             BufferReader、InputStream、OutputStream、HttpHeadResponseDecorator
+    观察者模式       任务完成时通知             ContextLoaderListener
+
+3.
+    OOP     封装、继承、多态
+    BOP     一切从Bean开始
+    AOP     解耦、专人做专事
+    IOC     转交控制权
+    DI      赋值
+
+4.Spring AOP
+    Aspect
+    JointPoint
+    Advice      增强的功能
+    Pointcut    expression表达式
