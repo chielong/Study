@@ -3,12 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="7998418c-1359-49bc-aa21-06279e0c68c7" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/20190306@DesignPattern/chielong/pattern/proxy/代理模式总结.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/20190306@DesignPattern/chielong/pattern/proxy/代理模式总结.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/chielong/enhanced/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/chielong/enhanced/Test.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../20190324@Spring/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../20190324@Spring/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../20190324@Spring/src/main/java/higher/annotation/HigherRequestMapping.java" beforeDir="false" afterPath="$PROJECT_DIR$/../20190324@Spring/src/main/java/higher/annotation/HigherRequestMapping.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../20190324@Spring/src/main/java/higher/context/HigherApplicationContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/../20190324@Spring/src/main/java/higher/context/HigherApplicationContext.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../20190324@Spring/src/main/java/higher/webmvc/HigherHandlerAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/../20190324@Spring/src/main/java/higher/webmvc/HigherHandlerAdapter.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -31,13 +26,16 @@
     <expand />
     <select />
   </component>
+  <component name="FavoritesManager">
+    <favorites_list name="20190306@DesignPattern" />
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/chielong/enhanced/day06/深究工厂模式.txt">
+        <entry file="file://$PROJECT_DIR$/src/chielong/enhanced/day09/深究委派模式.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="13" lean-forward="true" selection-end-line="13" />
+            <state relative-caret-position="153">
+              <caret line="9" column="47" selection-end-line="16" />
             </state>
           </provider>
         </entry>
@@ -58,6 +56,14 @@
       <find>public boolean c</find>
       <find>initialValue(</find>
       <find>put(</find>
+      <find>constructorParams</find>
+      <find>build</find>
+      <find>newInstance(</find>
+      <find>newProxyInstance</find>
+      <find>newProxyInstance(</find>
+      <find>getProxyConstructor</find>
+      <find>caller</find>
+      <find>getProxy</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -73,13 +79,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/chielong/pattern/adapter/login/v2/adapters/adapters.java" />
-        <option value="$PROJECT_DIR$/src/chielong/pattern/adapter/login/v2/adapters/LoginAdapter.java" />
-        <option value="$PROJECT_DIR$/src/chielong/pattern/adapter/login/v2/adapters/RegisterAdapter.java" />
-        <option value="$PROJECT_DIR$/src/chielong/pattern/adapter/login/v2/adapters/LoginForQQAdapter.java" />
-        <option value="$PROJECT_DIR$/src/chielong/pattern/adapter/login/v2/adapters/LoginForWechatAdapter.java" />
-        <option value="$PROJECT_DIR$/src/chielong/pattern/adapter/login/v2/adapters/RegisterForQQAdapter.java" />
-        <option value="$PROJECT_DIR$/src/chielong/pattern/adapter/login/v2/PassportForThirdAdapter.java" />
         <option value="$PROJECT_DIR$/src/chielong/pattern/template/course/NetworkCourse.java" />
         <option value="$PROJECT_DIR$/src/chielong/pattern/template/course/JavaClass.java" />
         <option value="$PROJECT_DIR$/src/chielong/pattern/template/思考:其他实现.txt" />
@@ -120,10 +119,17 @@
         <option value="$PROJECT_DIR$/src/chielong/enhanced/day03/设计模式的分类.txt" />
         <option value="$PROJECT_DIR$/src/chielong/enhanced/Singleton.java" />
         <option value="$PROJECT_DIR$/src/chielong/enhanced/day04/深究单例.txt" />
-        <option value="$PROJECT_DIR$/src/chielong/enhanced/Test.java" />
         <option value="$PROJECT_DIR$/src/chielong/enhanced/LazyDlcSingleton.java" />
         <option value="$PROJECT_DIR$/src/chielong/enhanced/day05/原型模式.txt" />
         <option value="$PROJECT_DIR$/src/chielong/enhanced/day06/深究工厂模式.txt" />
+        <option value="$PROJECT_DIR$/src/chielong/enhanced/Test.java" />
+        <option value="$PROJECT_DIR$/src/chielong/enhanced/day07/深究代理模式.txt" />
+        <option value="$PROJECT_DIR$/src/chielong/enhanced/day08/深究观察者模式.txt" />
+        <option value="$PROJECT_DIR$/src/chielong/pattern/facade/subsystem/Screen.java" />
+        <option value="$PROJECT_DIR$/src/chielong/pattern/facade/subsystem/Memory.java" />
+        <option value="$PROJECT_DIR$/src/chielong/pattern/facade/subsystem/Disk.java" />
+        <option value="$PROJECT_DIR$/src/chielong/pattern/facade/Computer.java" />
+        <option value="$PROJECT_DIR$/src/chielong/enhanced/day09/深究委派模式.txt" />
       </list>
     </option>
   </component>
@@ -156,6 +162,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
@@ -188,19 +195,18 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="chielong" type="462c0819:PsiDirectoryNode" />
               <item name="enhanced" type="462c0819:PsiDirectoryNode" />
-              <item name="day05" type="462c0819:PsiDirectoryNode" />
+              <item name="day09" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1555485348905" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1555901618535" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="GenericSQL" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -324,34 +330,47 @@
       <workItem from="1555315252948" duration="3686000" />
       <workItem from="1555382932680" duration="948000" />
       <workItem from="1555483658242" duration="1419000" />
+      <workItem from="1555569227951" duration="6834000" />
+      <workItem from="1555646033192" duration="1916000" />
+      <workItem from="1555657346784" duration="825000" />
+      <workItem from="1555898865957" duration="2106000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="84928000" />
+    <option name="totallyTimeSpent" value="96609000" />
+  </component>
+  <component name="TodoView" selected-index="3">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="877" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1988555" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.13757962" visible="true" weight="0.17453505" />
+      <window_info id="Structure" order="1" sideWeight="0.8624204" side_tool="true" weight="0.17453505" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
       <window_info id="UI Designer" order="4" />
       <window_info id="Capture Tool" order="5" />
-      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info id="Favorites" order="6" sideWeight="0.8611465" side_tool="true" weight="0.20171674" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3275862" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.2878981" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.3299363" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.3299363" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.3299363" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" weight="0.32866243" />
       <window_info anchor="bottom" id="Messages" order="12" weight="0.3299363" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -373,173 +392,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/chielong/pattern/proxy/dbroute/Order.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/chielong/pattern/proxy/dbroute/OrderServicestaticProxy.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/chielong/pattern/proxy/dynamic/JDKMama.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/chielong/pattern/proxy/restructure/Wantable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="25" selection-start-line="3" selection-start-column="25" selection-end-line="3" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/chielong/pattern/proxy/代理模式总结.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="28" selection-start-line="13" selection-start-column="28" selection-end-line="13" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/chielong/pattern/proxy/restructure/BusinessMan.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="21" selection-start-line="15" selection-start-column="21" selection-end-line="15" selection-end-column="21" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#237#238#0" expanded="true" />
-            <element signature="e#269#270#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/chielong/pattern/proxy/restructure/XXBB.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="47" selection-start-line="6" selection-start-column="47" selection-end-line="6" selection-end-column="47" />
-          <folding>
-            <element signature="e#131#132#0" expanded="true" />
-            <element signature="e#187#188#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/chielong/pattern/decorator/passport/ISigninForThirdService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="40" selection-start-line="7" selection-start-column="40" selection-end-line="7" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/chielong/pattern/decorator/passport/ISigninService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="16" selection-start-line="4" selection-start-column="16" selection-end-line="4" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/chielong/pattern/decorator/passport/SigninForThirdService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="89">
-          <caret line="7" column="41" selection-start-line="7" selection-start-column="41" selection-end-line="7" selection-end-column="41" />
-          <folding>
-            <element signature="e#273#274#0" expanded="true" />
-            <element signature="e#323#324#0" expanded="true" />
-            <element signature="e#224#225#0" expanded="true" />
-            <element signature="e#251#252#0" expanded="true" />
-            <element signature="e#315#316#0" expanded="true" />
-            <element signature="e#342#343#0" expanded="true" />
-            <element signature="e#423#424#0" expanded="true" />
-            <element signature="e#450#451#0" expanded="true" />
-            <element signature="e#528#529#0" expanded="true" />
-            <element signature="e#555#556#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/chielong/pattern/decorator/装饰模式总结.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="18" selection-start-line="1" selection-start-column="18" selection-end-line="1" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/chielong/pattern/observer/观察者模式总结.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-11.0.2.jdk/Contents/Home/lib/src.zip!/java.base/java/lang/Class.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="106">
-          <caret line="2099" column="18" selection-start-line="2099" selection-start-column="18" selection-end-line="2099" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/chielong/pattern/observer/events/core/Event.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="26" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="26" />
-          <folding>
-            <element signature="e#395#396#0" expanded="true" />
-            <element signature="e#424#425#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/chielong/pattern/observer/events/mouseEvent/MouseEventCallback.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="29" selection-start-line="5" selection-start-column="29" selection-end-line="5" selection-end-column="29" />
-          <folding>
-            <element signature="e#120#121#0" expanded="true" />
-            <element signature="e#198#199#0" expanded="true" />
-            <element signature="e#239#240#0" expanded="true" />
-            <element signature="e#317#318#0" expanded="true" />
-            <element signature="e#349#350#0" expanded="true" />
-            <element signature="e#427#428#0" expanded="true" />
-            <element signature="e#461#462#0" expanded="true" />
-            <element signature="e#539#540#0" expanded="true" />
-            <element signature="e#573#574#0" expanded="true" />
-            <element signature="e#651#652#0" expanded="true" />
-            <element signature="e#686#687#0" expanded="true" />
-            <element signature="e#764#765#0" expanded="true" />
-            <element signature="e#798#799#0" expanded="true" />
-            <element signature="e#876#877#0" expanded="true" />
-            <element signature="e#910#911#0" expanded="true" />
-            <element signature="e#988#989#0" expanded="true" />
-            <element signature="e#1023#1024#0" expanded="true" />
-            <element signature="e#1101#1102#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/chielong/pattern/observer/events/mouseEvent/MouseEventType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="16" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/chielong/pattern/observer/events/mouseEvent/Mouse.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="10" column="16" selection-start-line="10" selection-start-column="16" selection-end-line="10" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-11.0.2.jdk/Contents/Home/lib/src.zip!/java.base/java/lang/reflect/Method.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="106">
-          <caret line="551" column="18" selection-start-line="551" selection-start-column="18" selection-end-line="551" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/chielong/pattern/observer/events/core/EventListener.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-246">
@@ -698,13 +550,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/chielong/enhanced/Singleton.java" />
     <entry file="file://$PROJECT_DIR$/src/chielong/enhanced/LazyDlcSingleton.java" />
-    <entry file="file://$PROJECT_DIR$/src/chielong/enhanced/Test.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="8" selection-start-line="4" selection-start-column="8" selection-end-line="4" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/chielong/enhanced/day04/深究单例.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-161">
@@ -769,8 +614,166 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/chielong/enhanced/day06/深究工厂模式.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" lean-forward="true" selection-end-line="13" />
+        <state>
+          <caret selection-end-line="2" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-11.0.2.jdk/Contents/Home/lib/src.zip!/java.base/java/lang/reflect/InvocationHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="109">
+          <caret line="42" column="7" lean-forward="true" selection-start-line="42" selection-start-column="7" selection-end-line="42" selection-end-column="7" />
+          <folding>
+            <element signature="e#0#3545#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-11.0.2.jdk/Contents/Home/lib/src.zip!/java.base/jdk/internal/reflect/ConstructorAccessor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="34" column="17" selection-start-line="34" selection-start-column="17" selection-end-line="34" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/chielong/enhanced/Test.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-11.0.2.jdk/Contents/Home/lib/src.zip!/java.base/java/lang/reflect/Constructor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="158">
+          <caret line="474" column="24" selection-start-line="474" selection-start-column="13" selection-end-line="474" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-11.0.2.jdk/Contents/Home/lib/src.zip!/java.base/java/lang/reflect/Proxy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="320" column="37" selection-start-line="320" selection-start-column="20" selection-end-line="320" selection-end-column="37" />
+          <folding>
+            <element signature="docComment;class#Proxy#0" />
+            <element signature="docComment;field#proxyCache#0;class#Proxy#0" />
+            <element signature="docComment;field#h#0;class#Proxy#0" />
+            <element signature="docComment;method#Proxy#1;class#Proxy#0" />
+            <element signature="docComment;method#getProxyClass#0;class#Proxy#0" />
+            <element signature="docComment;method#getProxyConstructor#0;class#Proxy#0" />
+            <element signature="docComment;class#ProxyBuilder#0;class#Proxy#0" />
+            <element signature="class#ProxyBuilder#0;class#Proxy#0" />
+            <element signature="docComment;method#newProxyInstance#0;class#Proxy#0" />
+            <element signature="docComment;method#isProxyClass#0;class#Proxy#0" />
+            <element signature="docComment;method#getInvocationHandler#0;class#Proxy#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/chielong/enhanced/day07/深究代理模式.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" lean-forward="true" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/chielong/pattern/facade/subsystem/Screen.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="45" selection-start-line="11" selection-start-column="45" selection-end-line="11" selection-end-column="45" />
+          <folding>
+            <element signature="e#138#139#0" expanded="true" />
+            <element signature="e#174#175#0" expanded="true" />
+            <element signature="e#233#234#0" expanded="true" />
+            <element signature="e#250#251#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/chielong/pattern/facade/subsystem/Memory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="40" selection-start-line="11" selection-start-column="40" selection-end-line="11" selection-end-column="40" />
+          <folding>
+            <element signature="e#134#135#0" expanded="true" />
+            <element signature="e#170#171#0" expanded="true" />
+            <element signature="e#212#213#0" expanded="true" />
+            <element signature="e#261#262#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/chielong/pattern/facade/subsystem/Disk.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="39" selection-start-line="11" selection-start-column="39" selection-end-line="11" selection-end-column="39" />
+          <folding>
+            <element signature="e#133#134#0" expanded="true" />
+            <element signature="e#182#183#0" expanded="true" />
+            <element signature="e#208#209#0" expanded="true" />
+            <element signature="e#257#258#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/chielong/pattern/facade/Computer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="33" column="20" selection-start-line="33" selection-start-column="20" selection-end-line="33" selection-end-column="20" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/chielong/enhanced/day08/深究观察者模式.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="2" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/chielong/pattern/delegate/spring中的delegate.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/chielong/pattern/delegate/spring中的delegate.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/chielong/pattern/delegate/mvc/DispatcherServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/chielong/pattern/delegate/simple/EmployeeA.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/chielong/pattern/delegate/simple/Boss.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/chielong/pattern/delegate/simple/Leader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/chielong/pattern/delegate/委派模式总结.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/chielong/enhanced/day09/深究委派模式.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="47" selection-end-line="16" />
         </state>
       </provider>
     </entry>

@@ -1,0 +1,48 @@
+1.加载驱动类
+2.建立连接
+3.创建语句集
+4.执行语句集
+5.获取结果集
+6.关闭结果集
+7.关闭语句集
+8.关闭链接
+
+Table tableAnnotation = entityClass.getAnnotation(Table.class);
+String tableName = tableAnnotation.name();
+=> 拼sql
+
+给字段加@Column(name="...")
+=> 反射拿注解
+=> 通过注解获得对应的列名
+=> 则需要一对一对应(表的列名 : 类字段名)，放到一个mapping
+
+int columnCounts = rs.getMetaData().getColumnCount();
+while(rs.next()) {
+    Object instance = entityClass.newInstance();
+    for(int i = 0 ; i < columnCounts ; i++) {
+        String columnName = rs.getMetaData().getColumnName(i);
+        Field field = entity.getDeclaredField(columnName);  //从mapping中根据列名取得字段名
+        field.setAccessible(true);
+        field.set(instance , rs.getObject(column));
+    }
+}
+
+
+Hibernate 全自动档。不需要写一行sql
+Mybatis 半自动档。支持简单的映射，复杂关系，需要自己写sql
+SpringJDBC 手动挡。所有sql都需要自己写。他为我们设计了一套标准，模板模式
+
+为什么有mybatis，还需要自己手动写orm框架？
+1.mybatis可靠性无法保证
+2.不敢用hibernate，高级玩家的游戏
+3.没有时间从0到1写一个orm框架
+4.站在巨人的肩膀上再升级，做二次开发
+
+
+约定优于配置
+1.制定顶层接口
+    select(QueryRule rule);
+    insert(T entity);entity中的id不为空。或者其他条件不为空。都为空则不予执行。
+    update(T entity);entity中的id不为空。或者其他条件不为空。都为空则不予执行。
+    delete(T entity);只要entity不为空
+ 基于jdbc、redis、mongodb、ElasticSearch、Hive、Hbase

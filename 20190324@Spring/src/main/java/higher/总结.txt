@@ -1,0 +1,27 @@
+ioc
+    refresh()
+    定位：getResource()
+    加载：reader.loadBeanDefinitions()
+    注册：BeanDefinition，伪ioc容器，还是保存了配置信息
+
+di
+    getBean()
+    instantiateBean()，创建BeanWrapper
+    populateBean()，依赖注入
+    保存到真实的ioc容器中，单例缓存的容器，随取随用
+
+aop
+    getBean()
+    AdviserSupport，加载的AOP配置
+    通过解析配置针对每一个方法创建一个MethodInterceptorChain
+    MethodInterceptorChain.proceed();
+    invoke()
+    Advice Before、AfterRuturn、AfterThrowing
+
+mvc
+    DispatcherServlet init()
+    initStrategies()初始化SpringMVC的九大组件
+    initHandlerMapping()
+    initHandlerAdadpter()
+    initViewResolver()
+    View.render()往浏览器输出HTTP协议所支持的字符内容

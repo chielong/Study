@@ -1,0 +1,37 @@
+@Author:chielong
+
+=====================================
+Q:实现代理模式的底层逻辑是什么?
+    底层逻辑：代理类前置操作-目标类的操作-代理类后置操作。
+    我认为归根到底就是包装！就是AOP！就是加层壳！
+    比如Controller-Service-Dao的静态代理，直接持有对象，对需要的方法做一层包装(参数检验，结果处理等)
+    jdk动态代理见下面的分析，还是包装。是反射的。
+    cglib，一样的套路。只不过是字节码层面的操作。
+
+    (所以小马哥说，技术并没有进步。我赞同一半。我觉得是"指导技术的思想没有进步"。换句话说就是："高级思想都是相通的。"
+    SpringBoot的DispatcherServlet和Spring的DispatcherServlet的具体实现其实就是用的语法不一样)
+
+Q:为什么Jdk Proxy一定要求目标类实现接口，而CGLib Proxy对目标对象没有任何要求?
+    一句话总结：jdk只能继承Proxy，cglib却能继承Any类！(rapper们，这是单押)
+    所以jdk只能用"实现接口"的方式"欺骗"，而cglib却能各种骗。
+
+    1.分析Jdk动态代理。(我是jdk11)
+    jdk动态代理，有两个关键类/接口。一个是Proxy，一个是InvocationHandler.
+    从他们的包就可以看出端倪：java.lang.reflect;
+    jdk动态代理用的就是反射。
+    查看Invocationhandler:
+    {@code InvocationHandler} is the interface implemented by the <i>invocation handler</i> of a proxy instance.
+    (InvacationHandler是一个由处理方法的代理实例实现的接口)
+    而在Proxy的newProxyInstance()中，处理逻辑为：根据类加载器和自定义接口(还有一个Class<?> caller看不懂)找到代理类构造方法。用这个构造方法去生成一个代理类实例。而那个InvocationHandler类型的实例，就是这个构造方法的参数。
+    但是在Proxy类中，还有一个InvocationHandler的成员变量，查找构造方法发现，竟然有一个protected Proxy(InvacationHandler h){...}的方法。
+    结果就是，生成的代理对象，既继承了所有target的接口(因此得到了这些借口所有暴露的方法)，又持有InvocationHandler成员变量(因为就是Proxy的子类！！！)。
+    当调用方法接口的方法时，调用了InvacationHandler的invoke()方法。
+    那么回到问题本身：JdkProxy一定要求目标类实现接口呢？因为Proxy类所有生成代理类的父类，而java不允许多继承。
+    所以，jdk动态代理是一场骗局:假装实现了所有接口，却偷摸摸的在所有方法都换成了invoke()。——仅仅是看着像"代理"那么一回事。其实还是包装。
+
+    2.分析CGLib代理
+    关键接口：MethodInterceptor，他有一个intercept()方法。(类似于InvacationHandler)
+    关键类：Enhancer。
+    方法：Enhancer#create()
+    只不过在处理中，将反射换成了asm直接从字节码做。而处理的手段，把从父类(target)继承的public方法，换成intercept()。
+    但是cglib却对final类和final方法无能为力。
