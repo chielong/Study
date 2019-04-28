@@ -1,0 +1,126 @@
+Configuration
+    mybatis-config.xml
+    mapper.xml
+SqlSessionFactory
+SqlSession
+
+
+主要流程
+    1.解析配置文件
+    2.创建工厂类
+    3.创建会话
+    4.会话操作数据库
+
+#mybatis职责划分
+
+mybatis的架构分层
+    1.提供给应用使用:接口层(服务员)
+        SqlSession
+    2.处理数据库操作:核心层(大厨)
+        配置解析:
+            Configuration
+            MapperStatement
+            ParameterMapping
+            ResultMapping
+        参数处理:
+            数据映射
+            参数映射
+            动态sql
+        sql执行:
+            SimpleExecutor
+            BatchExecutor
+            ReuseExecutor
+        结果映射:
+            简单映射
+            关联映射
+            延迟加载
+        插件
+    3.支持工作:基础层(采购、下手)
+        日志
+        缓存
+        数据源/连接池
+        事务
+        反射
+
+#mybatis缓存
+    缓存体系结构：
+        Cache接口
+            PerpetualCache
+            LogCache
+            LruCache
+            ...
+        装饰者模式
+    一级缓存
+        默认打开
+            关闭一级缓存，有几种方式？
+
+        工作位置
+            sqlsession
+            实际是放在Executor的Local Cache
+        维护对象
+        失效时机
+            update
+            insert
+            delete
+    二级缓存
+        作用域
+            mapper-namespace，跨会话
+        二级缓存应该工作在一级缓存之前还是之后?
+            之前
+            二级缓存装饰一级缓存
+        思考:基于作用域，范围，应该在什么对象中维护？
+        两次查询，第一次事务不提交，第二次继续真查询不走缓存。
+        开启二级缓存
+            config文件中
+                <setting name="cacheEnabled" value="true"/>
+            mapper文件中
+                <cache>...<cache/>
+                属性:
+                    type
+                    size
+                    eviction
+                    flushInterval
+                    readOnly
+                    ...
+            如果开启二级缓存，baseExecutor会被CacheExecutor装饰
+            在一个方法上设置是否使用二级缓存的 useCache
+    用户 <-> 二级缓存(CacheExecutor) <-> 一级缓存(baseExecutor) <-> db
+    什么时候需要开启二级缓存?
+    三方的二级缓存插件
+
+#mybatis工作原理
+
+配置解析过程
+    解析了什么文件？
+    怎么解析的？
+    产生了什么对象？
+    结果存放到了哪里？
+    <plugins>
+    <environment>
+        事务
+            TransactionFactory
+            DataSource
+获得Mapper对象
+    为什么要引入Mapper对象？
+    Mapper对象是什么对象？
+    为什么要从sqlSession里面去获取？
+    为什么穿进去一个接口，然后要用接口类型来接受?
+
+执行sql
+    为什么Mybatis的动态代理不需要实现类？
+    接口没有实现类，调用的是什么方法？
+    接口方法怎么找到要执行的sql？
+    方法参数是怎么转化成sql参数？
+    结果集怎么转化为对象？
+
+
+
+四大天王
+    Executor
+    StatementHandler
+    ParameterHandler
+    ResultSetHandler
+
+快捷键
+    cmd + option + b
+

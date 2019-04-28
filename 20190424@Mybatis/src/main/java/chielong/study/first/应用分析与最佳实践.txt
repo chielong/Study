@@ -1,0 +1,101 @@
+1.为什么用mybatis？
+    数据库驱动-Connection-PrepareStatement-ResultSet
+    jdbc的问题？
+        A.注册驱动，获取链接
+        B.创建Statement
+        C.execute()方法
+        D.代码重复，结果集处理太复杂
+        E.资源
+    Apache DBUtils
+    Spring JDBC
+        资源管理:dataSource
+        结果处理:rowMapper
+    工具类解决：
+        A.方法封装
+        B.支持数据源
+        C.映射结果集
+    没解决：
+        A.SQL语句硬编码
+        B.参数只能按顺序传入(占位符)
+        C.没有实现实体类到数据库记录的映射
+        D.没有提供缓存等功能
+    object-—mapping——relationalDB
+    mybatis特性
+        A.使用连接池对链接进行管理
+        B.sql和代码分离，集中管理
+        C.参数映射和动态sql
+        D.结果集映射
+        E.缓存管理
+        F.重复sql的提取
+        G.插件机制
+    选择什么orm框架？
+        A.业务简单的项目可以使用hibernate
+        B.需要灵活的sql，可以用mybatis
+        C.对性能要求高，可以使用JDBC
+        D.Spring JDBC可以和ORM框架混用。
+
+2.不用容器，mybatis怎么用?(原生api)
+    核心对象
+        SqlSessionFactoryBuilder 生命周期：方法(method)
+        SqlSessionFactory       生命周期：全局(application)
+        SqlSession              生命周期：请求和操作(request/method)
+        Mapper                  生命周期：方法(method)
+    全局映射
+        <configuration> => Configuration
+        <properties>
+        <settings>
+            <setting>
+        <typeAliases>
+        <typeHandlers>
+        <objectFactory>
+            自己写一个MyObjectFactory,继承DefaultObjectFactory。并且重写create(Class)方法
+        <plugins>
+        <environments>
+        <mappers>
+    mapper.xml
+        <cache>
+        <cache-ref>
+        <resultMap>
+        <sql>
+        <insert>
+        <delete>
+        <update>
+        <select>
+    动态sql
+        <if>
+        <choose>
+        <when>
+        <otherwise>
+        <trim>
+        <where>
+        <set>
+        <foreach>  生成符合sql语法的sql语句 => 批量操作(删改查) 但是有数据接收包4M的限制，解决:BatchExecutor
+        <bind>
+        多数据库支持
+        动态sql中的可插拔脚本语言
+    settings
+        <cacheEnabled>
+        <proxyfactory>
+        <lazyLoadingEnabled>
+        <aggressiveLazyLoading>
+        <lazyLoadTriggerMethods>
+        <defaultExecutorType>
+        <localCacheScope>
+        <logImpl>
+    嵌套(关联)查询/N+1/延迟加载
+        什么时候会出现关联查询？
+        mybatis关联查询的方式? 嵌套结果、嵌套查询
+        什么是N+1？
+        延迟加载配置及原理。
+
+3.mybatis的高级用法与拓展?
+    通用mapper
+    Mybatis-Plus
+        通用CRUD
+        条件构造
+        代码生成
+        翻页
+        批量操作
+
+4.mybatis常见问题？
+
