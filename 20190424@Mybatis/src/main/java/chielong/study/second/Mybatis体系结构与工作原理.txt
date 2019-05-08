@@ -3,20 +3,24 @@ Configuration
     mapper.xml
 SqlSessionFactory
 SqlSession
+Executor
+StatementHandler(映射参数的输入经过其后，变成映射的输出参数)
+DB
 
+#1.mybatis的工作流程分析
+    $主要流程
+        1.解析配置文件
+        2.创建工厂类
+        3.创建会话
+        4.会话操作数据库
 
-主要流程
-    1.解析配置文件
-    2.创建工厂类
-    3.创建会话
-    4.会话操作数据库
+    $mybatis职责划分
 
-#mybatis职责划分
-
-mybatis的架构分层
-    1.提供给应用使用:接口层(服务员)
+#2.mybatis的架构分层与模块划分
+    $mybatis架构分层
+    <1>提供给应用使用:接口层(服务员)
         SqlSession
-    2.处理数据库操作:核心层(大厨)
+    <2>处理数据库操作:核心层(大厨)
         配置解析:
             Configuration
             MapperStatement
@@ -35,33 +39,53 @@ mybatis的架构分层
             关联映射
             延迟加载
         插件
-    3.支持工作:基础层(采购、下手)
+        核心层工作：
+            (1)把接口中传入的参数解析并映射成JDBC类型
+            (2)解析xml文件中的sql语句，包括插入参数，动态sql生成
+            (3)执行sql
+            (4)处理结果集，映射成java对象
+    <3>支持工作:基础层(采购、下手)
         日志
         缓存
         数据源/连接池
         事务
         反射
+        ...
 
-#mybatis缓存
-    缓存体系结构：
+#3.mybatis缓存
+    缓存体系结构：基本实现与装饰类
         Cache接口
-            PerpetualCache
+            PerpetualCache  HashMap实现
             LogCache
             LruCache
             ...
         装饰者模式
+    缓存实现类
+        基本缓存
+        淘汰算法缓存
+            LruCache
+            FifoCache
+            SoftCache/WeakCache
+        装饰器缓存
+            LoggingCache
+            SynchronizedCache
+            BlockingCache
+            SerializedCache
+            ScheduledCache
+            TransactionalCache
     一级缓存
         默认打开
             关闭一级缓存，有几种方式？
-
         工作位置
             sqlsession
             实际是放在Executor的Local Cache
         维护对象
+            Executor的实现类SimpleExecutor/ReuseExecutor/BatchExecutor的父类BaseExecutor中持有PerpetualCache
         失效时机
             update
             insert
             delete
+            为什么？flushCache=true
     二级缓存
         作用域
             mapper-namespace，跨会话
@@ -69,58 +93,96 @@ mybatis的架构分层
             之前
             二级缓存装饰一级缓存
         思考:基于作用域，范围，应该在什么对象中维护？
-        两次查询，第一次事务不提交，第二次继续真查询不走缓存。
+            CachingExecutor,装饰器模式来进行装饰
+        两次查询，第一次事务不提交，第二次继续真查询不走缓存。(没有写入二级缓存)
         开启二级缓存
             config文件中
                 <setting name="cacheEnabled" value="true"/>
             mapper文件中
-                <cache>...<cache/>
+                <cache />
                 属性:
                     type
                     size
-                    eviction
+                    eviction,回收策略
                     flushInterval
                     readOnly
-                    ...
+                    blocking
             如果开启二级缓存，baseExecutor会被CacheExecutor装饰
-            在一个方法上设置是否使用二级缓存的 useCache
-    用户 <-> 二级缓存(CacheExecutor) <-> 一级缓存(baseExecutor) <-> db
+
+            注：只要cacheEnabled=true，BaseExecutor就会被装饰。
+            有没有加<cache/>，决定了在启动的时候会不会创建这个mapper的Cache对象。最终影响到CacheingExecutor的query()方法判断。
+
+            在单个方法上设置是否使用二级缓存的 <select id="..." resultMap="..." useCache="false"> (默认是true)
+
+    用户 <-> 二级缓存(CachingExecutor) <-> 一级缓存(baseExecutor) <-> db
+
     什么时候需要开启二级缓存?
+        1.查询为主
+        2.操作单表
+
+    cache-ref:
+        多个namespace共享一个二级缓存。跨namesapce的缓存共享。
+
     三方的二级缓存插件
+        比如redis缓存
+        <cache type="org.mybatis.caches.redis.RedisCache" eviction="FIFO" flushInterval="10000" size="1024" readOnly="true"/>
 
-#mybatis工作原理
+#4.mybatis源码解析
+    $配置解析过程
+        解析了什么文件？
+            mybatis-config.xml
+            mapper.xml
+        怎么解析？
+            SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
+            返回一个SqlSessionFactory。
+            中间创建了一个XMLConfigBuilder对象来解析，生成Configuration
+                XMLConfigBuilder是BaseBuidler子类
+                还有其他如XMlMappedBuilder、XMLStatementBuilder。
+            在处理<environments>中，数据源工厂和数据源会被创建
+            TypeRegistry
+                Map<Type, Map<JdbcType, TypeHandler<?>>>
+            MapperRegistry
+                Map<Class<?>, MapperProxyFactory<?>>
+        产生了什么对象？
+            Configuration
+        结果存放到了哪里？
+            所有的值，都给了Configuration
+    $会话创建过程
+        sqlSession的实现类是什么？
+        其他还创建了什么对象？
+            1.创建Transaction
+                JDBC
+                MANAGED
+            2.创建Executor(模板方法模式)
+                SIMPLE
+                BATCH
+                REUSE
+                数据源和事务工厂在创建执行器时会用到。
+    $获得Mapper对象
+        为什么要引入Mapper对象？
+        Mapper对象是什么对象？
+        为什么要从SqlSession里面去获取？
+        为什么传进去一个接口，然后还要用接口类型来接收？
+    $执行sql
+        为什么mybatis的动态代理不需要实现类？
+            首先判断执行SQL还是执行方法。
+        接口没有实现类，调用的是什么方法？
+        接口方法怎么找到要执行的sql？
+        方法参数是怎么转化成sql参数？
+        结果集怎么转换成对象？
+        引入MapperProxy是干嘛的？
+            解决硬编码和编译时检查问题。类名+方法名确定StatementID
 
-配置解析过程
-    解析了什么文件？
-    怎么解析的？
-    产生了什么对象？
-    结果存放到了哪里？
-    <plugins>
-    <environment>
-        事务
-            TransactionFactory
-            DataSource
-获得Mapper对象
-    为什么要引入Mapper对象？
-    Mapper对象是什么对象？
-    为什么要从sqlSession里面去获取？
-    为什么穿进去一个接口，然后要用接口类型来接受?
-
-执行sql
-    为什么Mybatis的动态代理不需要实现类？
-    接口没有实现类，调用的是什么方法？
-    接口方法怎么找到要执行的sql？
-    方法参数是怎么转化成sql参数？
-    结果集怎么转化为对象？
-
-
-
-四大天王
+核心对象总结：
+    Configuration
+    SqlSession
     Executor
+    MapperProxy
     StatementHandler
     ParameterHandler
     ResultSetHandler
-
-快捷键
-    cmd + option + b
+    MappeedStatement
+    MapperMethod
+    SqlSource
+    BoundSql
 

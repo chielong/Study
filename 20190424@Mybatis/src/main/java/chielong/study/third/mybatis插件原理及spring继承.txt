@@ -1,0 +1,215 @@
+mybatis核心对象
+    Configuration：包含了mybatis所有配置信息
+        MapperRegistry
+        TypeAliasRegistry
+        TypeHandlerRegistry
+    SqlSession：对操作数据库的增上改查的api进行了封装，提供给应用层使用
+        SqlSessionFactory
+        DefaultSqlSession
+    Executor：mybatis执行器，调度核心。负责sql语句生成和查询缓存的维护
+        BaseExecutor
+        SimpleExecutor
+        BatchExecutor
+        ReuseExecutor
+    StatementHandler：负责对JDBC Statement的操作。
+        BaseStatementHandler
+        SimpleStatementHandler
+        PreparedStatementHandler
+        CallableStatementHandler
+    ParameterHandler：用户参数->JDBC Statement参数
+        DefaultParameterHandler
+    ResultSetHandler：JDBC返回的ResultSet结果集对象转化成为List集合
+        DefaultResultSetHandler
+    MapperProxy：代理对象
+        MapperProxyFactory
+    MapperStatement：维护一条<select|update|delete|insert>封装，
+        SqlSource
+        BoundSql
+
+#1.mybatis插件原理
+
+插件的猜想
+    A.不修改原有代码，怎么改变和增强对象的行为？
+        代理模式
+    B.插件的拦截链怎么形成？如何做到层层拦截？
+        责任链模式
+
+代理模式需要解决的问题
+    A.有哪些对象允许被代理？有哪些方法可以被拦截？
+        Executor会拦截到CachingExecutor或者BaseExecutor。因为创建Executor时是先创建Executor,再拦截。
+    B.怎么创建代理?
+        需要一个实现了InvocationHandler的代理类。
+    C.什么时候创建代理对象?启动？创建会话？执行sql？
+    D.被代理后，调用的是什么方法？怎么调用到原被代理对象的方法？
+
+插件(plugins)
+    Executor(update , query , flushStatements , commit , rollback , getTransaction , close , isClosed)
+    ParameterHandler(getParameterObject , setParameters)
+    ResultSetHandler(handleResultSets , handleOutputParameters)
+    StatementHandler(prepare , parameterize , batch , update , query)
+    这四个都是接口，都可以使用jdk动态代理
+
+别人的插件是怎么工作的？
+    A.编写插件类
+        1)实现mybatis的Interceptor的接口
+        2)@Intercepts，指定拦截的对象和方法、方法参数
+          方法名称+参数类型，构成方法签名，确定能拦截到哪个方法。
+        3)实现接口的三个方法
+    B.注册插件
+        在mybatis-config.xml中注册插件
+    C.mybatis启动时会解析
+
+原理:代理和拦截的实现
+    A.四大对象什么时候被代理，也就是：代理对象是什么时候创建的？
+        Executor：openSession()
+        StatementHandler：SimpleExecutor.doQuery()
+            其中包含了ParameterHandler和ResultSetHandler
+        创建之后调用InterceptorChain.pluginAll()
+    B.多个插件的情况下，代理能不能被代理？代理顺序和调用顺序的关系？
+        插件定义顺序：1-2-3
+        代理顺序：1-2-3
+        代理执行顺序：3-2-1
+    C.谁来创建代理对象？
+        Plugin类。
+        在实现的三个方法之一：plugin()方法里面，直接return Plugin.wrap(target , this);返回代理对象
+    D.被代理后，调用的是什么方法？怎么调用到原被代理对象的方法？
+        Plugin的invoke()方法
+            先调用拦截器的interceptor()方法
+            用invocation.proceed()调用目标对象的目标方法
+
+mybatis插件关键对象
+    Interceptor接口
+        实现方法
+    自定义拦截器(实现类)
+    Plugin
+        创建代理对象，包装四大对象
+    Invocation
+        对代理类的包装，可以调用proceed()调用到被拦截的方法
+    InterceptorChain
+        对被代理的包装，可以调用proceed()调用到被拦截的方法
+
+PageHelper原理探究
+    Controller中的用法？
+    在哪里改写sql？
+    关键类
+        PageInterceptor：自定义拦截器
+        Page：包装分页参数
+        PageHelper：包装结果
+        PageInfo：工具类
+
+mybatis插件应用场景分析
+    A.水平分表，注解
+        query
+        update
+    B.权限控制
+        query拦截
+    C.数据加解密
+        query：解密
+        update：加密
+
+#2.Mybatis和Spring整合
+
+为什么要整合，如何整合？
+    A.管理对象
+    B.通过一个Template封装方法
+
+    applicationContext.xml:
+        <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+            <property name="configLocation" value="classpath:mybatis-config.xml"/>
+            <property name="mapperLocations" value="classpath:*.xml"/>
+            <property name="dataSource" ref="dataSource"/>
+        </bean>
+    配置Mapper接口的路径
+        <mybatis-spring:scan base-package="chielong.study.dao">
+    或者配置MapperScannerConfigurer
+
+mybatis整合到spring关键问题
+    A.SqlSessionFactory是什么时候创建的？
+        SqlSessionFactoryBean,afterPropertiesSet()方法
+            建立Configraution
+            建立事务工厂，默认SpringManagedTransactionFactory
+            调用xmlMapperBuilder.parse()
+                把接口和对应的MapperProxyFactory注册到MapperRegistry中
+            最后调用sqlSessionFactoryBuilder.build()
+    B.SqlSession怎么获取？为什么不用它来getMapper?
+        DefaultSqlSession线程不安全
+        SqlSessionTemplate线程安全
+
+        SqlSessionDaoSupport
+            持有SqlSessiontemplate,并有一个getSqlSession()方法，可以返回这个对象
+    C.为什么@Autowired注入到Mapper接口，可以直接使用？
+      在ioc容器里面我们注册的是什么？注册的时候发生了什么事情？
+
+关键配置
+    A.整合的jar包
+    B.<SqlSessionFactoryBean>
+    C.<MapperScannerConfigurer>
+    D.注入使用
+
+第一步：创建会话工厂
+    解析配置文件
+    创建Configuration
+    返回DefaultSqlSessionFactory
+
+第二步：获得会话
+    能用DefaultSqlSession吗？
+    不能的话，为什么不能？替代品是什么？
+    怎么在DAO层的实现类中获得这个SqlSession?
+        直接继承SqlSessionDaoSupport
+        或者创建BaseDao继承SqlSessionDaoSupport,在BaseDao封装各种操作。
+            实现类继承BaseDao，实现Dao层接口。这就是Mapper接口。实现类加上@Repository注解。
+    SqlSessionTemplate
+
+    不想创建实现类，怎么办？
+    实际用法：@Autowired注入接口
+
+第三步：接口扫描注册
+    什么时候扫描？
+        MapperScannerConfigurer
+    扫描的时候，注册到IOC容器中的是什么？
+        MapperFactoryBean继承了SqlSessionDaoSupport，可以拿到SqlSessionTemplate
+
+第四步：注入使用
+    实例化Service
+    实例化Mapper
+    第一步：
+        Spring会根据Mapper的名字从BeanFactory中获取它的BeanDefinition
+        再从BeanDefinition中获取BeanClass,对应的是MapperFactryBean
+        创建MapperFactoryBean,返回SqlSessionTemplate
+    第二步：sqlSessionTamplate.getMapper()
+        1).sqlSessionTemplate.getConfiguration()
+        2).configuration.getMapper();
+            通过MapperProxyFactory获取一个MapperProxy代理对象
+
+关键对象总结
+    SqlSessionTemplate
+        Spring中SqlSession的替代品，线程安全。
+        用代理的方式获取DefaultSqlSession。
+    SqlSessionDaoSupport
+        用于获取SqlSessionTemplate，只要继承它即可
+    SqlSessionInterceptor(内部类)
+        用来代理DefaultSqlSession，在SqlSessionTemplate中使用
+        invoke()
+            使用工厂类，执行器类型，异常解析器创建一个SqlSession，再调用sqlSession的实现类。
+    MapperFacctoryBean
+        注册到IOC容器中替换接口类。继承了SqlSessionDaoSupport用来获取SqlSessionTemplate
+        因为注入接口的时候，会调用它的getObject()方法
+    SqlSessionHolder
+        控制SqlSession和事务
+
+工厂 SqlSessionFactory、ObjectFactory、MapperProyFactory
+单例  Configuration SqlSessionFactory
+创建者 SqlSessionFactoryBuilder、XMLConfigBuilder、XMLMapperBuilder、XMLStatementBuilder
+代理
+    绑定：MapperProxy
+    插件：plugin
+    Spring集成Mybatis MapperPorxy Plugin
+    延迟加载：ProxyFactory (javassit CGlib)
+    日志打印Log： ConnectionLogger StatmentLogger
+    mybatis自带连接池：PooledConnection
+适配器 具体的日志实现 slf4j 适配
+模板方法 Executor BaseExecutor simple reuse batch
+装饰者 CachingExecutor simple reuse batch lru fifo perpectual
+责任链 InterceptorChain
+
+

@@ -2,18 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4a9a76c9-53e7-4ed2-914b-780fbc9d3cec" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../20190306@DesignPattern/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../20190306@DesignPattern/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../20190324@Spring/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../20190324@Spring/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../20190324@Spring/src/main/java/jdbc/JdbcTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../20190324@Spring/src/main/java/jdbc/JdbcTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../20190324@Spring/src/main/java/jdbc/orm/javax/core/common/Page.java" beforeDir="false" afterPath="$PROJECT_DIR$/../20190324@Spring/src/main/java/jdbc/orm/javax/core/common/Page.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../20190324@Spring/src/main/java/jdbc/orm/javax/core/common/ResultMsg.java" beforeDir="false" afterPath="$PROJECT_DIR$/../20190324@Spring/src/main/java/jdbc/orm/javax/core/common/ResultMsg.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../20190324@Spring/src/main/java/jdbc/orm/javax/core/common/jdbc/BaseDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/../20190324@Spring/src/main/java/jdbc/orm/javax/core/common/jdbc/BaseDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../20190324@Spring/src/main/java/jdbc/orm/javax/core/common/jdbc/datasource/DynamicDataSource.java" beforeDir="false" afterPath="$PROJECT_DIR$/../20190324@Spring/src/main/java/jdbc/orm/javax/core/common/jdbc/datasource/DynamicDataSource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../20190324@Spring/src/main/java/jdbc/orm/javax/core/common/jdbc/datasource/DynamicDataSourceEntry.java" beforeDir="false" afterPath="$PROJECT_DIR$/../20190324@Spring/src/main/java/jdbc/orm/javax/core/common/jdbc/datasource/DynamicDataSourceEntry.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../20190324@Spring/src/main/java/jdbc/orm/javax/core/common/utils/DataUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/../20190324@Spring/src/main/java/jdbc/orm/javax/core/common/utils/DataUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../20190324@Spring/src/main/java/jdbc/orm/javax/core/common/utils/GenericsUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/../20190324@Spring/src/main/java/jdbc/orm/javax/core/common/utils/GenericsUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../20190324@Spring/src/main/java/jdbc/orm/javax/core/common/utils/ObjectUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/../20190324@Spring/src/main/java/jdbc/orm/javax/core/common/utils/ObjectUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../20190324@Spring/src/main/java/jdbc/orm/javax/core/common/utils/StringUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/../20190324@Spring/src/main/java/jdbc/orm/javax/core/common/utils/StringUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/chielong/study/first/应用分析与最佳实践.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/chielong/study/first/应用分析与最佳实践.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/chielong/study/second/Mybatis体系结构与工作原理.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/chielong/study/second/Mybatis体系结构与工作原理.txt" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -29,15 +23,22 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/chielong/study/second/Mybatis体系结构与工作原理.txt">
+        <entry file="file://$PROJECT_DIR$/src/main/java/chielong/study/常见问题.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="468">
-              <caret line="115" lean-forward="true" selection-start-line="115" selection-end-line="115" />
+            <state relative-caret-position="655">
+              <caret line="53" lean-forward="true" selection-start-line="53" selection-end-line="53" />
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -46,7 +47,18 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/main/java/chielong/study/first/应用分析与最佳实践.txt" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/chielong/study/four/MeBatisTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/chielong/study/four/v1/MeExecutor.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/mybatisSQL.properties" />
+        <option value="$PROJECT_DIR$/src/main/java/chielong/study/four/v1/MeConfiguration.java" />
+        <option value="$PROJECT_DIR$/src/main/java/chielong/study/four/v1/MeMapperProxy.java" />
+        <option value="$PROJECT_DIR$/src/main/java/chielong/study/four/v1/MeSqlSession.java" />
         <option value="$PROJECT_DIR$/src/main/java/chielong/study/second/Mybatis体系结构与工作原理.txt" />
+        <option value="$PROJECT_DIR$/src/main/java/chielong/study/third/mybatis插件原理及spring继承.txt" />
+        <option value="$PROJECT_DIR$/src/main/java/chielong/study/four/手写mybatis.txt" />
+        <option value="$PROJECT_DIR$/src/main/java/chielong/study/快问快答.txt" />
+        <option value="$PROJECT_DIR$/src/main/java/chielong/study/常见问题.txt" />
       </list>
     </option>
   </component>
@@ -58,9 +70,10 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="y" value="569" />
-    <option name="width" value="1440" />
-    <option name="height" value="331" />
+    <option name="x" value="644" />
+    <option name="y" value="23" />
+    <option name="width" value="796" />
+    <option name="height" value="877" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
@@ -70,6 +83,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -112,34 +127,27 @@
               <item name="chielong" type="462c0819:PsiDirectoryNode" />
               <item name="study" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="mybatis" type="b2602c69:ProjectViewProjectNode" />
-              <item name="20190424@Mybatis" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="chielong" type="462c0819:PsiDirectoryNode" />
-              <item name="study" type="462c0819:PsiDirectoryNode" />
-              <item name="second" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1556375242779" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1557306100642" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="chielong.study.four.v1" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -165,23 +173,32 @@
       <updated>1556108410436</updated>
       <workItem from="1556108417223" duration="5604000" />
       <workItem from="1556366620352" duration="5665000" />
+      <workItem from="1556435981840" duration="5000" />
+      <workItem from="1556436014461" duration="2068000" />
+      <workItem from="1556454627539" duration="5777000" />
+      <workItem from="1557043876684" duration="5856000" />
+      <workItem from="1557059420901" duration="3479000" />
+      <workItem from="1557067775163" duration="449000" />
+      <workItem from="1557109590890" duration="9126000" />
+      <workItem from="1557195783549" duration="7123000" />
+      <workItem from="1557293139845" duration="1241000" />
+      <workItem from="1557304573970" duration="1442000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11269000" />
+    <option name="totallyTimeSpent" value="47835000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="877" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49936306" visible="true" weight="0.2532189" />
-      <window_info id="Structure" order="1" sideWeight="0.50063694" side_tool="true" weight="0.24964234" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49808916" visible="true" weight="0.26752505" />
+      <window_info id="Structure" order="1" sideWeight="0.5019108" side_tool="true" weight="0.22889842" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
       <window_info id="UI Designer" order="4" />
       <window_info id="Capture Tool" order="5" />
-      <window_info id="Favorites" order="6" sideWeight="0.50063694" side_tool="true" weight="0.24964234" />
+      <window_info id="Favorites" order="6" sideWeight="0.5019108" side_tool="true" weight="0.22889842" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" />
@@ -190,7 +207,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.3299363" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Terminal" order="10" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
@@ -212,22 +229,119 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
+        <state relative-caret-position="148">
+          <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/chielong/study/four/MeBatisTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="3" lean-forward="true" selection-start-line="4" selection-start-column="3" selection-end-line="4" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mybatisSQL.properties">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/chielong/study/four/v1/MeMapperProxy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="8" lean-forward="true" selection-start-line="17" selection-start-column="8" selection-end-line="17" selection-end-column="8" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/chielong/study/four/v1/MeExecutor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="20" lean-forward="true" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="20" />
+          <folding>
+            <element signature="e#159#160#0" expanded="true" />
+            <element signature="e#186#187#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/chielong/study/four/v1/MeConfiguration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="26">
+          <caret line="12" column="72" selection-start-line="12" selection-start-column="72" selection-end-line="12" selection-end-column="72" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/chielong/study/four/v1/MeSqlSession.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="3" selection-start-line="4" selection-start-column="3" selection-end-line="4" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/.name">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/20190424@Mybatis.iml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/compiler.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/encodings.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/misc.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/modules.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/chielong/study/second/update流程.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/chielong/study/first/应用分析与最佳实践.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1581">
-          <caret line="93" column="14" selection-start-line="93" selection-start-column="8" selection-end-line="93" selection-end-column="14" />
+        <state relative-caret-position="-1028">
+          <caret line="104" column="38" selection-start-line="104" selection-start-column="15" selection-end-line="104" selection-end-column="38" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/chielong/study/second/Mybatis体系结构与工作原理.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="468">
-          <caret line="115" lean-forward="true" selection-start-line="115" selection-end-line="115" />
+        <state relative-caret-position="298">
+          <caret line="167" column="28" selection-start-line="167" selection-start-column="28" selection-end-line="167" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/chielong/study/third/mybatis插件原理及spring继承.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="502">
+          <caret line="204" column="13" selection-start-line="204" selection-start-column="13" selection-end-line="204" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/chielong/study/four/手写mybatis.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="28" column="20" selection-start-line="28" selection-start-column="20" selection-end-line="28" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/chielong/study/快问快答.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="332">
+          <caret line="109" lean-forward="true" selection-start-line="109" selection-end-line="109" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/chielong/study/常见问题.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="655">
+          <caret line="53" lean-forward="true" selection-start-line="53" selection-end-line="53" />
         </state>
       </provider>
     </entry>

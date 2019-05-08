@@ -1,26 +1,51 @@
-1.为什么用mybatis？
-    数据库驱动-Connection-PrepareStatement-ResultSet
-    jdbc的问题？
-        A.注册驱动，获取链接
+#1.为什么用mybatis？
+    $数据库驱动-Connection-PrepareStatement-ResultSet
+    $jdbc连接数据库
+        A.注册驱动DriverManager，获取链接Connection
         B.创建Statement
         C.execute()方法
         D.代码重复，结果集处理太复杂
-        E.资源
-    Apache DBUtils
-    Spring JDBC
+        E.关闭资源
+    $jdbc的问题
+        A.需要手动管理资源
+        B.代码重复
+        C.业务逻辑与数据操作的代码耦合,环境变化后修改难度大
+        D.结果集需要手动处理
+    $Apache DBUtils
+        解决的最核心的问题就是结果集的映射，可以吧ResultSet封装成JavaBean。
+        A.QueryRunner，对数据库的增删改查的方法进行封装。
+        B.ResultSetHandler
+        eg:
+            String sql = "select * form user"
+            List<BlogDto> list = queryRunner.query(sql , new BeanListHandler<>(BlogDto.class));
+    $Spring JDBC
+        A.实现RowMapper接口，mapRow()方法
+        B.转化结果集返回Object
+        eg:
+            public List<Employee> query(String sql) {
+                new JdbcTemplate(new DruidDataSource());
+                return jdbcTemplate.query(sql , new EmployeeRowMapper());
+            }
         资源管理:dataSource
         结果处理:rowMapper
-    工具类解决：
+    $工具类解决：
         A.方法封装
         B.支持数据源
         C.映射结果集
-    没解决：
+    $没解决：
         A.SQL语句硬编码
         B.参数只能按顺序传入(占位符)
         C.没有实现实体类到数据库记录的映射
         D.没有提供缓存等功能
-    object-—mapping——relationalDB
-    mybatis特性
+    $object-—mapping——relationalDB
+    $hibernate:
+        hbm.xml或注解
+        session.save(blog);
+        问题：
+            比如更新的操作不能指定部分字段
+            无法自定义sql，优化困难
+            不支持动态sql
+    $mybatis特性
         A.使用连接池对链接进行管理
         B.sql和代码分离，集中管理
         C.参数映射和动态sql
@@ -28,74 +53,151 @@
         E.缓存管理
         F.重复sql的提取
         G.插件机制
-    选择什么orm框架？
+    $都是对JDBC的封装
+    $选择什么orm框架？
         A.业务简单的项目可以使用hibernate
         B.需要灵活的sql，可以用mybatis
         C.对性能要求高，可以使用JDBC
         D.Spring JDBC可以和ORM框架混用。
 
-2.不用容器，mybatis怎么用?(原生api)
-    核心对象
+#2.mybatis编程式开发[不用容器，mybatis怎么用?(原生api)]
+    $mybatis编程式开发
+        A.mybatis和mysql-jar包依赖
+        B.全局配置文件mybatis-config.xml
+        C.映射器Mapper.xml
+        D.Mapper接口
+    $核心对象
         SqlSessionFactoryBuilder 生命周期：方法(method)
         SqlSessionFactory       生命周期：全局(application)
-        SqlSession              生命周期：请求和操作(request/method)
+        SqlSession              生命周期：请求和方法(request/method)
         Mapper                  生命周期：方法(method)
-    全局映射
+    mybatis-config.xml全局映射
         <configuration> => Configuration
+            文件顺序固定
         <properties>
+            可以放在properties文件中，用${}引入
         <settings>
             <setting>
+                cacheEnabled            true/false          true
+                lazyLoadingEnabled      true/false          false
+                argressiveLazyLoading   ture/false          false
+                defualtExecutorType     SIMPLE/REUSE/BATCH  SIMPLE
+                lazyLoadTriggerMethods                      equals,clone,hashCode,toString
+                localCacheScope         SESSION/STATEMENT   SESSION
+                logImpl                 SLF4J、LOG4J...
         <typeAliases>
-        <typeHandlers>
-        <objectFactory>
+        <typeHandlers>[重点]
+            Java对象 <--> JDBC类型
+            自定义一些类型准换规则/处理类型时做特殊动作。
+                <1>继承 BaseTypeHandler<T>
+                setter : Java -> JDBC
+                getter : JDBC -> Java
+                <2>在mybatis-config.xml中注册:
+                <typeHandlers>
+                    <typeHandler handler="..."/>
+                </typeHandlers>
+                <3>插入值,java->jdbc,指定typeHandler
+                返回值,jdbc->java,在resultMap的列上指定typeHandler
+        <objectFactory>[重点]
             自己写一个MyObjectFactory,继承DefaultObjectFactory。并且重写create(Class)方法
+            在config文件里面注册，在创建对象的时候会被自动调用。
+            <1>什么时候调用了 objectFactory.create()?
+            创建 DefaultResultSetHandler 的时候，和创建对象的时候。
+            <2>创建对象后，已有的属性为什么被覆盖了?
+            在 DefaultResultSetHandler 类的 395 行 getRowValue()方法里面里面调用了 applyPropertyMappings()。
+            <3>返回结果的时候，ObjectFactory 和 TypeHandler 哪个先工作?
+            先是 ObjectFactory，再是 TypeHandler。肯定是先创建对象。
+            PS:step out 可以看到一步步调用的层级。
         <plugins>
+            Executor
+            ParameterHandler
+            ResultSetHandler
+            StatementHandler
         <environments>
+        <transactionManager>
+        <dataSource>
         <mappers>
+            用法：
+                <1>resource
+                <2>url
+                <3>完全限定名
+                <4>将包内的映射器接口实现全部注册为映射器(最常用)
+            接口跟 statement 是怎么绑定起来的?
+                statementID相同
+            再哪一步拿到sql？
+                MapperStatement里面有sql
     mapper.xml
         <cache>
         <cache-ref>
-        <resultMap>
+        <resultMap> 描述如何从数据库结果集中来加载对象
         <sql>
-        <insert>
-        <delete>
-        <update>
-        <select>
-    动态sql
+            <insert>
+            <delete>
+            <update>
+            <select>
+#3.mybatis最佳实践
+    动态sql配置
         <if>
-        <choose>
-        <when>
-        <otherwise>
-        <trim>
-        <where>
-        <set>
-        <foreach>  生成符合sql语法的sql语句 => 批量操作(删改查) 但是有数据接收包4M的限制，解决:BatchExecutor
-        <bind>
-        多数据库支持
-        动态sql中的可插拔脚本语言
-    settings
-        <cacheEnabled>
-        <proxyfactory>
-        <lazyLoadingEnabled>
-        <aggressiveLazyLoading>
-        <lazyLoadTriggerMethods>
-        <defaultExecutorType>
-        <localCacheScope>
-        <logImpl>
+        <choose>    选择一个
+            <when>
+            <otherwise>
+        <trim>      去掉where、and、逗号之类的符号
+            <where>
+            <set>
+        <foreach>
+    批量操作
+        批量插入
+            foreach
+        批量更新
+            case，when
+        BatchExecutor
+            生成符合sql语法的sql语句 => 批量操作(删改查) 但是有数据接收包4M的限制，解决:BatchExecutor
     嵌套(关联)查询/N+1/延迟加载
         什么时候会出现关联查询？
         mybatis关联查询的方式? 嵌套结果、嵌套查询
+            一对一关联查询，嵌套结果
+            <resultMap id="..." type="...">
+                <id />
+                <result />
+                <association property="..." javaType="...">
+                    <id />
+                    <result />
+                </association>
+            </resultMap>
+            一对一关联查询，嵌套查询
+             <resultMap id="..." type="...">
+                <id />
+                <result />
+                <association property="..." javaType="..." select="...">
+                    <id />
+                    <result />
+                </association>
+            </resultMap>
+            <select id="...">
+            </select>
         什么是N+1？
         延迟加载配置及原理。
-
-3.mybatis的高级用法与拓展?
+    翻页
+        逻辑翻页与物理翻页的区别
+        逻辑翻页的支持RowBounds
+        物理翻页的几种实现方式
+            PageHelper
+    Mybatis Generator与Example
+        不想写这么多重复代码，配置，怎么办？
+        查询条件的构造？
     通用mapper
+        问题：字段表发生了变化
+        解决思路：
+            1).继承
+            2).通用mapper
     Mybatis-Plus
         通用CRUD
+           定义好 Mapper 接口后，只需要继承 BaseMapper<T> 接口即可获得通用的增删改查功能
         条件构造
+            通过 EntityWrapper<T>(实体包装类)，可以用于拼接 SQL 语句，并且支持排序、分组查询等复杂的 SQL。
         代码生成
-        翻页
-        批量操作
 
-4.mybatis常见问题？
+
+resultType 是 select 标签的一个属性，适用于返回 JDK 类型(比如 Integer、String 等等)和实体类。
+这种情况下结果集的列和实体类的属性可以直接映射。如果返回的字段无法直接映射，就要用 resultMap 来建立映射关系
 

@@ -1,20 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d99bdc77-977a-4d0f-87f8-90411ccc4e30" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../20190306@DesignPattern/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../20190306@DesignPattern/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jdbc/JdbcTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jdbc/JdbcTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jdbc/orm/javax/core/common/Page.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jdbc/orm/javax/core/common/Page.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jdbc/orm/javax/core/common/ResultMsg.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jdbc/orm/javax/core/common/ResultMsg.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jdbc/orm/javax/core/common/jdbc/BaseDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jdbc/orm/javax/core/common/jdbc/BaseDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jdbc/orm/javax/core/common/jdbc/datasource/DynamicDataSource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jdbc/orm/javax/core/common/jdbc/datasource/DynamicDataSource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jdbc/orm/javax/core/common/jdbc/datasource/DynamicDataSourceEntry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jdbc/orm/javax/core/common/jdbc/datasource/DynamicDataSourceEntry.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jdbc/orm/javax/core/common/utils/DataUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jdbc/orm/javax/core/common/utils/DataUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jdbc/orm/javax/core/common/utils/GenericsUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jdbc/orm/javax/core/common/utils/GenericsUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jdbc/orm/javax/core/common/utils/ObjectUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jdbc/orm/javax/core/common/utils/ObjectUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jdbc/orm/javax/core/common/utils/StringUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jdbc/orm/javax/core/common/utils/StringUtils.java" afterDir="false" />
-    </list>
+    <list default="true" id="d99bdc77-977a-4d0f-87f8-90411ccc4e30" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -153,10 +140,10 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="y" value="512" />
+  <component name="ProjectFrameBounds">
+    <option name="y" value="23" />
     <option name="width" value="1440" />
-    <option name="height" value="388" />
+    <option name="height" value="877" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
@@ -208,6 +195,13 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="jdbc" type="462c0819:PsiDirectoryNode" />
               <item name="orm" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="spring" type="b2602c69:ProjectViewProjectNode" />
+              <item name="20190324@Spring" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -310,11 +304,12 @@
       <workItem from="1556205992088" duration="14000" />
       <workItem from="1556241534530" duration="16230000" />
       <workItem from="1556414577209" duration="6051000" />
+      <workItem from="1556435955488" duration="12000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="152815000" />
+    <option name="totallyTimeSpent" value="152827000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -327,9 +322,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="877" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.070063695" visible="true" weight="0.2274678" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.070063695" visible="true" weight="0.23032904" />
       <window_info id="Structure" order="1" sideWeight="0.9299363" side_tool="true" weight="0.2274678" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
