@@ -1,0 +1,80 @@
+并发的发展历史
+    真空管/穿孔打卡
+        计算机大部分时间处于空闲状态
+    晶体管/批处理操作系统
+        IO问题
+        造成CPU资源浪费(痛点)
+        需求->如何最大化利用CPU资源
+    集成电路/多道程序设计
+        进程A/进程B
+
+为什么需要线程？
+    1.单核->多核->真正意义上达到并行计算
+    2.实施性需求->线程
+
+Java中如何应用多线程？
+    1.实现Runnable
+    2.继承Thread(本质是对Runnable接口的实现)
+    3.Callable/Future带返回值的线程
+    4.ThreadPool
+    线程可以合理的利用多核心CPU资源，提高程序吞吐量
+
+实际应用
+    线程池
+    new Thread()
+    怎么去应用？
+    文件跑批、收益文件、对账文件
+    BIO模型优化
+        Socket socket = socket.accpet(); //连接阻塞
+        socket.inputStream();//read阻塞
+        socket.outputStream();//write阻塞
+
+        =>new Thread(new Handler(socket)).start();//解决了r/w阻塞问题
+
+        zookeeper:
+            责任链+异步: RequertProcessor -> PrintProcessor -> SaveProcessor
+        见Request类
+
+    所有和阻塞相关的方法，都会抛出一个这样的异常：InterruptedExecution
+    怎么去改造自己的程序实现异步化，异步消息队列去解决了什么问题？
+
+并发基础
+    生命周期
+        New
+            New->Runnable start()
+        Runnable(Running<--调度、yield-->Ready)
+            Waiting->Runnbale notify、notifyall、LockSupport.unpark()
+        Waiting
+            Runnable->Waiting  wait、join、LockSupport.park()
+        Time Taiting
+            Runnable->Waiting  sleep
+        Blocked(只有锁抢占，才出现Blocked)
+            Runnable->Blocked synchronized
+        Terminal
+
+使用线程的目的：可以提高程序性能
+
+线程的基本体系
+    6种状态
+    4种创建方式
+    线程的使用
+
+    线程启动为什么是start()
+        基于不同os来实现不同线程创建和启动指令
+    线程终止
+        stop()
+        interrput()
+            底层，又一个isInterruptted，判断中断标记并处理
+    线程复位
+        Thread.interruptted();
+        InterruptedException
+            看源码发现：先复位，再抛出异常
+            停止正在干的事情，并抛出异常。
+            并不是说这个线程已经结束了!!!
+        为什么需要复位？
+            Thread.interruptted()让外界知道，现在还不行。
+
+
+hotspot源码
+
+
