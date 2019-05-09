@@ -2,11 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4a9a76c9-53e7-4ed2-914b-780fbc9d3cec" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/20190424@Mybatis.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/20190424@Mybatis.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/chielong/study/AppTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/standalone/BlogMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/standalone/BlogMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/standalone/BlogMapperExt.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/standalone/BlogMapperExt.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/standalone/c3p0-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/standalone/c3p0-config.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/standalone/db.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/standalone/db.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/standalone/generator-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/standalone/generator-config.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/standalone/hikari.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/standalone/hikari.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/standalone/mybatis-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/standalone/mybatis-config.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -36,67 +38,64 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/chielong/study/BlogExampleTest.java">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/standalone/BlogMapper.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="30" column="66" selection-start-line="30" selection-start-column="52" selection-end-line="30" selection-end-column="66" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="349">
+              <caret line="173" column="73" selection-start-line="173" selection-start-column="73" selection-end-line="173" selection-end-column="73" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/chielong/study/JdbcC3p0Test.java">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/standalone/BlogMapperExt.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="20" column="38" selection-start-line="20" selection-start-column="38" selection-end-line="20" selection-end-column="38" />
+            <state relative-caret-position="34">
+              <caret line="2" column="44" selection-start-line="2" selection-start-column="44" selection-end-line="2" selection-end-column="44" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/chielong/study/JdbcTest.java">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/standalone/c3p0-config.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="72" column="167" selection-start-line="72" selection-start-column="167" selection-end-line="72" selection-end-column="167" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="102">
+              <caret line="6" column="39" selection-start-line="6" selection-start-column="39" selection-end-line="6" selection-end-column="39" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/chielong/study/MBGTest.java">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/standalone/db.properties">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="18" column="48" selection-start-line="18" selection-start-column="48" selection-end-line="18" selection-end-column="48" />
+            <state relative-caret-position="51">
+              <caret line="3" column="19" selection-start-line="3" selection-start-column="19" selection-end-line="3" selection-end-column="19" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/chielong/study/MyBatisTest.java">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/standalone/generator-config.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="344">
-              <caret line="214" column="39" selection-start-line="214" selection-start-column="39" selection-end-line="214" selection-end-column="39" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="493">
+              <caret line="29" column="86" selection-start-line="29" selection-start-column="86" selection-end-line="29" selection-end-column="86" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/standalone/hikari.properties">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="1" column="25" selection-start-line="1" selection-start-column="25" selection-end-line="1" selection-end-column="25" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/test/java/chielong/study/PageInterceptorTest.java">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/standalone/mybatis-config.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="326">
-              <caret line="21" column="39" selection-start-line="21" selection-start-column="39" selection-end-line="21" selection-end-column="39" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="475">
+              <caret line="42" column="54" selection-start-line="42" selection-start-column="54" selection-end-line="42" selection-end-column="54" />
             </state>
           </provider>
         </entry>
@@ -110,19 +109,17 @@
       </list>
     </option>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>com.gupaoedu.</find>
+    </findStrings>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/resources/mybatisSQL.properties" />
-        <option value="$PROJECT_DIR$/src/main/java/chielong/study/four/v1/MeConfiguration.java" />
-        <option value="$PROJECT_DIR$/src/main/java/chielong/study/four/v1/MeMapperProxy.java" />
-        <option value="$PROJECT_DIR$/src/main/java/chielong/study/four/v1/MeSqlSession.java" />
-        <option value="$PROJECT_DIR$/src/main/java/chielong/study/second/Mybatis体系结构与工作原理.txt" />
-        <option value="$PROJECT_DIR$/src/main/java/chielong/study/third/mybatis插件原理及spring继承.txt" />
-        <option value="$PROJECT_DIR$/src/main/java/chielong/study/four/手写mybatis.txt" />
         <option value="$PROJECT_DIR$/src/main/java/chielong/study/快问快答.txt" />
         <option value="$PROJECT_DIR$/src/main/java/chielong/study/常见问题.txt" />
         <option value="$PROJECT_DIR$/src/main/resources/standalone/table.sql" />
@@ -167,6 +164,13 @@
         <option value="$PROJECT_DIR$/src/test/java/chielong/study/MBGTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/chielong/study/MyBatisTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/chielong/study/PageInterceptorTest.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/standalone/BlogMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/resources/standalone/BlogMapperExt.xml" />
+        <option value="$PROJECT_DIR$/src/main/resources/standalone/c3p0-config.xml" />
+        <option value="$PROJECT_DIR$/src/main/resources/standalone/db.properties" />
+        <option value="$PROJECT_DIR$/src/main/resources/standalone/generator-config.xml" />
+        <option value="$PROJECT_DIR$/src/main/resources/standalone/hikari.properties" />
+        <option value="$PROJECT_DIR$/src/main/resources/standalone/mybatis-config.xml" />
       </list>
     </option>
   </component>
@@ -177,7 +181,7 @@
       </MavenGeneralSettings>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds">
     <option name="y" value="325" />
     <option name="width" value="1440" />
     <option name="height" value="575" />
@@ -263,7 +267,7 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="chielong" type="462c0819:PsiDirectoryNode" />
               <item name="study" type="462c0819:PsiDirectoryNode" />
-              <item name="cache" type="462c0819:PsiDirectoryNode" />
+              <item name="standalone" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -274,7 +278,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1557391690841" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1557392382566" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -283,6 +287,9 @@
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="chielong.study.standalone" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/test/java/chielong/study" />
       <recent name="$PROJECT_DIR$/src/main/resources/standalone" />
@@ -327,12 +334,12 @@
       <workItem from="1557195783549" duration="7123000" />
       <workItem from="1557293139845" duration="1241000" />
       <workItem from="1557304573970" duration="1442000" />
-      <workItem from="1557382534347" duration="8086000" />
+      <workItem from="1557382534347" duration="8628000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="55921000" />
+    <option name="totallyTimeSpent" value="56463000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="877" extended-state="6" />
@@ -373,48 +380,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/chielong/study/first/应用分析与最佳实践.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1028">
-          <caret line="104" column="38" selection-start-line="104" selection-start-column="15" selection-end-line="104" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/chielong/study/second/Mybatis体系结构与工作原理.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="298">
-          <caret line="167" column="28" selection-start-line="167" selection-start-column="28" selection-end-line="167" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/chielong/study/third/mybatis插件原理及spring继承.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="502">
-          <caret line="204" column="13" selection-start-line="204" selection-start-column="13" selection-end-line="204" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/chielong/study/four/手写mybatis.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="28" column="20" selection-start-line="28" selection-start-column="20" selection-end-line="28" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/chielong/study/快问快答.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="332">
-          <caret line="109" lean-forward="true" selection-start-line="109" selection-end-line="109" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="355">
-          <caret line="30" column="38" selection-start-line="30" selection-start-column="38" selection-end-line="30" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/standalone/table.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="93">
@@ -765,9 +730,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/standalone/BlogMapper.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/chielong/study/standalone/domain/associate/BlogAndAuthor.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
@@ -778,21 +740,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/chielong/study/cache/FirstLevelCacheTest.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/chielong/study/standalone/cache/FirstLevelCacheTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
           <caret line="3" column="33" selection-start-line="3" selection-start-column="33" selection-end-line="3" selection-end-column="33" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/chielong/study/cache/SecondLevelCacheTest.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/chielong/study/standalone/cache/SecondLevelCacheTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
           <caret line="3" column="33" selection-start-line="3" selection-start-column="33" selection-end-line="3" selection-end-column="33" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/chielong/study/BlogExampleTest.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/chielong/study/standalone/BlogExampleTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="510">
           <caret line="30" column="66" selection-start-line="30" selection-start-column="52" selection-end-line="30" selection-end-column="66" />
@@ -802,14 +764,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/chielong/study/JdbcC3p0Test.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/chielong/study/standalone/JdbcC3p0Test.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
           <caret line="20" column="38" selection-start-line="20" selection-start-column="38" selection-end-line="20" selection-end-column="38" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/chielong/study/JdbcTest.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/chielong/study/standalone/JdbcTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="72" column="167" selection-start-line="72" selection-start-column="167" selection-end-line="72" selection-end-column="167" />
@@ -819,14 +781,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/chielong/study/MBGTest.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/chielong/study/standalone/MBGTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
           <caret line="18" column="48" selection-start-line="18" selection-start-column="48" selection-end-line="18" selection-end-column="48" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/chielong/study/MyBatisTest.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/chielong/study/standalone/MyBatisTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="344">
           <caret line="214" column="39" selection-start-line="214" selection-start-column="39" selection-end-line="214" selection-end-column="39" />
@@ -836,13 +798,62 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/chielong/study/PageInterceptorTest.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/chielong/study/standalone/PageInterceptorTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="326">
+        <state relative-caret-position="352">
           <caret line="21" column="39" selection-start-line="21" selection-start-column="39" selection-end-line="21" selection-end-column="39" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/standalone/BlogMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="349">
+          <caret line="173" column="73" selection-start-line="173" selection-start-column="73" selection-end-line="173" selection-end-column="73" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/standalone/BlogMapperExt.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="44" selection-start-line="2" selection-start-column="44" selection-end-line="2" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/standalone/c3p0-config.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="39" selection-start-line="6" selection-start-column="39" selection-end-line="6" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/standalone/db.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="19" selection-start-line="3" selection-start-column="19" selection-end-line="3" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/standalone/generator-config.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="29" column="86" selection-start-line="29" selection-start-column="86" selection-end-line="29" selection-end-column="86" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/standalone/hikari.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="25" selection-start-line="1" selection-start-column="25" selection-end-line="1" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/standalone/mybatis-config.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="475">
+          <caret line="42" column="54" selection-start-line="42" selection-start-column="54" selection-end-line="42" selection-end-column="54" />
         </state>
       </provider>
     </entry>

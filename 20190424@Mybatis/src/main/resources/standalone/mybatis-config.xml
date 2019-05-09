@@ -24,23 +24,23 @@
     </settings>
 
     <typeAliases>
-        <typeAlias alias="blog" type="com.gupaoedu.domain.Blog" />
+        <typeAlias alias="blog" type="chielong.study.standalone.domain.Blog" />
     </typeAliases>
 
 <!--    <typeHandlers>
-        <typeHandler handler="com.gupaoedu.type.MyTypeHandler"></typeHandler>
+        <typeHandler handler="chielong.study.standalone.type.MyTypeHandler"></typeHandler>
     </typeHandlers>-->
 
     <!-- 对象工厂 -->
-<!--    <objectFactory type="com.gupaoedu.objectfactory.GPObjectFactory">
+<!--    <objectFactory type="chielong.study.standalone.objectfactory.GPObjectFactory">
         <property name="gupao" value="666"/>
     </objectFactory>-->
 
 <!--    <plugins>
-        <plugin interceptor="com.gupaoedu.interceptor.SQLInterceptor">
+        <plugin interceptor="chielong.study.standalone.interceptor.SQLInterceptor">
             <property name="gupao" value="betterme" />
         </plugin>
-        <plugin interceptor="com.gupaoedu.interceptor.MyPageInterceptor">
+        <plugin interceptor="chielong.study.standalone.interceptor.MyPageInterceptor">
         </plugin>
     </plugins>-->
 
