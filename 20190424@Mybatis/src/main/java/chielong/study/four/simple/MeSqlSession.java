@@ -1,4 +1,4 @@
-package chielong.study.four.v1;
+package chielong.study.four.simple;
 
 /**
  * Created by chielong on 2019-05-05.
@@ -22,7 +22,11 @@ public class MeSqlSession {
     public <T> T selectOne(String statementId , Object parameter) {
         String sql = configuration.sqlMappings.getString(statementId);
 
-        return executor.query(sql , parameter);
+        if(null != sql && !"".equals(sql)) {
+            return executor.query(sql , parameter);
+        }
+
+        return null;
     }
 
     /**

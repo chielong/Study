@@ -1,4 +1,4 @@
-package chielong.study.four.v1;
+package chielong.study.four.simple;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
@@ -15,7 +15,9 @@ public class MeMapperProxy implements InvocationHandler {
 
     @Override
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
-        String statemenId = "";
+        String mapperInterface = method.getDeclaringClass().getName();
+        String methodName = method.getName();
+        String statemenId = mapperInterface + "." + methodName;
 
         return sqlSession.selectOne(statemenId , args[0]);
     }

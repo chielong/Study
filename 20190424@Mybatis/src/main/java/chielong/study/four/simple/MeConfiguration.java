@@ -1,4 +1,4 @@
-package chielong.study.four.v1;
+package chielong.study.four.simple;
 
 import java.lang.reflect.Proxy;
 import java.util.ResourceBundle;
